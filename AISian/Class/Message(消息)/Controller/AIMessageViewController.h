@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AIMessageViewController.h
 //  AISian
 //
 //  Created by qianfeng on 15/9/26.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface AIMessageViewController : UITableViewController
 
 @end
-
