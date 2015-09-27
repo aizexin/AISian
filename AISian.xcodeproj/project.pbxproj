@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45F42FC51BB801FD003179D0 /* minion_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC01BB801FD003179D0 /* minion_01.png */; settings = {ASSET_TAGS = (); }; };
+		45F42FC61BB801FD003179D0 /* minion_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC11BB801FD003179D0 /* minion_02.png */; settings = {ASSET_TAGS = (); }; };
+		45F42FC71BB801FD003179D0 /* minion_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC21BB801FD003179D0 /* minion_03.png */; settings = {ASSET_TAGS = (); }; };
+		45F42FC81BB801FD003179D0 /* minion_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC31BB801FD003179D0 /* minion_04.png */; settings = {ASSET_TAGS = (); }; };
+		45F42FC91BB801FD003179D0 /* minion_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC41BB801FD003179D0 /* minion_05.png */; settings = {ASSET_TAGS = (); }; };
 		BCD502FD1BB63DD100A9E7BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD502FC1BB63DD100A9E7BB /* main.m */; };
 		BCD503001BB63DD100A9E7BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD502FF1BB63DD100A9E7BB /* AppDelegate.m */; };
 		BCD503061BB63DD100A9E7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD503041BB63DD100A9E7BB /* Main.storyboard */; };
@@ -242,7 +247,6 @@
 		BCD5050B1BB65CA400A9E7BB /* AIMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5050A1BB65CA400A9E7BB /* AIMessageViewController.m */; };
 		BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5050D1BB65CB900A9E7BB /* AIProfileViewController.m */; };
 		BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505101BB65D1500A9E7BB /* AiHomeViewController.m */; };
-		BCD505191BB6616200A9E7BB /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505181BB6616200A9E7BB /* UIImage+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +260,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45F42FC01BB801FD003179D0 /* minion_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_01.png; sourceTree = "<group>"; };
+		45F42FC11BB801FD003179D0 /* minion_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_02.png; sourceTree = "<group>"; };
+		45F42FC21BB801FD003179D0 /* minion_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_03.png; sourceTree = "<group>"; };
+		45F42FC31BB801FD003179D0 /* minion_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_04.png; sourceTree = "<group>"; };
+		45F42FC41BB801FD003179D0 /* minion_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_05.png; sourceTree = "<group>"; };
 		BCD502F71BB63DD100A9E7BB /* AISian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD502FB1BB63DD100A9E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD502FC1BB63DD100A9E7BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -502,8 +511,6 @@
 		BCD5050F1BB65D1500A9E7BB /* AiHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AiHomeViewController.h; sourceTree = "<group>"; };
 		BCD505101BB65D1500A9E7BB /* AiHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiHomeViewController.m; sourceTree = "<group>"; };
 		BCD505121BB65E4400A9E7BB /* AIDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefine.h; sourceTree = "<group>"; };
-		BCD505171BB6616200A9E7BB /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Extension.h"; path = "../../../../../../UIImage+Extension.h"; sourceTree = "<group>"; };
-		BCD505181BB6616200A9E7BB /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Extension.m"; path = "../../../../../../UIImage+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -524,6 +531,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45F42FBE1BB7FE87003179D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		45F42FBF1BB7FE87003179D0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BCD502EE1BB63DD100A9E7BB = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +578,11 @@
 			isa = PBXGroup;
 			children = (
 				BCD503071BB63DD100A9E7BB /* Images.xcassets */,
+				45F42FC01BB801FD003179D0 /* minion_01.png */,
+				45F42FC11BB801FD003179D0 /* minion_02.png */,
+				45F42FC21BB801FD003179D0 /* minion_03.png */,
+				45F42FC31BB801FD003179D0 /* minion_04.png */,
+				45F42FC41BB801FD003179D0 /* minion_05.png */,
 				BCD503201BB6417000A9E7BB /* EmotionIcons */,
 				BCD502FB1BB63DD100A9E7BB /* Info.plist */,
 				BCD502FC1BB63DD100A9E7BB /* main.m */,
@@ -851,11 +877,10 @@
 		BCD504EA1BB6593900A9E7BB /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
-				BCD505131BB65F0500A9E7BB /* Category */,
+				45F42FBE1BB7FE87003179D0 /* Model */,
+				45F42FBF1BB7FE87003179D0 /* View */,
 				BCD504EB1BB6593900A9E7BB /* Controller */,
-				BCD504EC1BB6593900A9E7BB /* Model */,
 				BCD504ED1BB6593900A9E7BB /* Other */,
-				BCD504EE1BB6593900A9E7BB /* VIew */,
 			);
 			path = "Main(主要)";
 			sourceTree = "<group>";
@@ -869,13 +894,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		BCD504EC1BB6593900A9E7BB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		BCD504ED1BB6593900A9E7BB /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -884,13 +902,6 @@
 				BCD502FF1BB63DD100A9E7BB /* AppDelegate.m */,
 			);
 			path = Other;
-			sourceTree = "<group>";
-		};
-		BCD504EE1BB6593900A9E7BB /* VIew */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VIew;
 			sourceTree = "<group>";
 		};
 		BCD504EF1BB659A800A9E7BB /* Discover(发现) */ = {
@@ -1057,15 +1068,6 @@
 			path = VIew;
 			sourceTree = "<group>";
 		};
-		BCD505131BB65F0500A9E7BB /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				BCD505171BB6616200A9E7BB /* UIImage+Extension.h */,
-				BCD505181BB6616200A9E7BB /* UIImage+Extension.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1148,8 +1150,10 @@
 			files = (
 				BCD5042D1BB6417100A9E7BB /* d_sikao@2x.png in Resources */,
 				BCD5049C1BB6417100A9E7BB /* lxh_koubishi@2x.png in Resources */,
+				45F42FC51BB801FD003179D0 /* minion_01.png in Resources */,
 				BCD504361BB6417100A9E7BB /* d_xixi@2x.png in Resources */,
 				BCD5041D1BB6417100A9E7BB /* d_ku@2x.png in Resources */,
+				45F42FC81BB801FD003179D0 /* minion_04.png in Resources */,
 				BCD504451BB6417100A9E7BB /* f_shenma@2x.png in Resources */,
 				BCD504431BB6417100A9E7BB /* f_jiong@2x.png in Resources */,
 				BCD5040D1BB6417100A9E7BB /* d_dahaqi@2x.png in Resources */,
@@ -1158,6 +1162,7 @@
 				BCD5044F1BB6417100A9E7BB /* h_woshou@2x.png in Resources */,
 				BCD504CB1BB6417100A9E7BB /* lxh_xiangyixiang@2x.png in Resources */,
 				BCD504441BB6417100A9E7BB /* f_meng@2x.png in Resources */,
+				45F42FC91BB801FD003179D0 /* minion_05.png in Resources */,
 				BCD504931BB6417100A9E7BB /* lxh_jiekexun@2x.png in Resources */,
 				BCD504351BB6417100A9E7BB /* d_xiongmao@2x.png in Resources */,
 				BCD504A11BB6417100A9E7BB /* lxh_leifeng.png in Resources */,
@@ -1166,6 +1171,7 @@
 				BCD5041E1BB6417100A9E7BB /* d_kun@2x.png in Resources */,
 				BCD5046A1BB6417100A9E7BB /* lxh_beicui.gif in Resources */,
 				BCD504221BB6417100A9E7BB /* d_nanhaier@2x.png in Resources */,
+				45F42FC61BB801FD003179D0 /* minion_02.png in Resources */,
 				BCD5046D1BB6417100A9E7BB /* lxh_beidian.gif in Resources */,
 				BCD5045F1BB6417100A9E7BB /* o_zhaoxiangji@2x.png in Resources */,
 				BCD5044E1BB6417100A9E7BB /* h_ruo@2x.png in Resources */,
@@ -1174,6 +1180,7 @@
 				BCD504641BB6417100A9E7BB /* w_weifeng@2x.png in Resources */,
 				BCD504311BB6417100A9E7BB /* d_tu@2x.png in Resources */,
 				BCD504A01BB6417100A9E7BB /* lxh_leifeng.gif in Resources */,
+				45F42FC71BB801FD003179D0 /* minion_03.png in Resources */,
 				BCD504471BB6417100A9E7BB /* f_xi@2x.png in Resources */,
 				BCD504521BB6417100A9E7BB /* l_shangxin@2x.png in Resources */,
 				BCD504761BB6417100A9E7BB /* lxh_buhaoyisi.gif in Resources */,
@@ -1397,7 +1404,6 @@
 				BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */,
 				BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
-				BCD505191BB6616200A9E7BB /* UIImage+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1525,7 +1531,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1537,7 +1543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1598,6 +1604,7 @@
 				BCD5031C1BB63DD100A9E7BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BCD5031D1BB63DD100A9E7BB /* Build configuration list for PBXNativeTarget "AISianTests" */ = {
 			isa = XCConfigurationList;
@@ -1606,6 +1613,7 @@
 				BCD5031F1BB63DD100A9E7BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

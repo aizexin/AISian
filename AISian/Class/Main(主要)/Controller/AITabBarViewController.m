@@ -12,7 +12,6 @@
 #import "AIDiscoverViewController.h"
 #import "AiHomeViewController.h"
 #import "AIDefine.h"
-#import "UIImage+Extension.h"
 @interface AITabBarViewController ()
 
 @end
@@ -38,9 +37,9 @@
     [chilidVC.view setBackgroundColor:AIRandomColor];
     
     chilidVC.tabBarItem.title = title;
-    chilidVC.tabBarItem.image = [[UIImage imageWithName:imageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    chilidVC.tabBarItem.image = [[UIImage imageNamed:imageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     //被选中的图片
-    UIImage *selImage = [[UIImage imageWithName:selImageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
+    UIImage *selImage = [[UIImage imageNamed:selImageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     chilidVC.tabBarItem.selectedImage = selImage;
     [self addChildViewController:chilidVC];
 }
