@@ -7,19 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45F42FC51BB801FD003179D0 /* minion_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC01BB801FD003179D0 /* minion_01.png */; settings = {ASSET_TAGS = (); }; };
-		45F42FC61BB801FD003179D0 /* minion_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC11BB801FD003179D0 /* minion_02.png */; settings = {ASSET_TAGS = (); }; };
-		45F42FC71BB801FD003179D0 /* minion_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC21BB801FD003179D0 /* minion_03.png */; settings = {ASSET_TAGS = (); }; };
-		45F42FC81BB801FD003179D0 /* minion_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC31BB801FD003179D0 /* minion_04.png */; settings = {ASSET_TAGS = (); }; };
-		45F42FC91BB801FD003179D0 /* minion_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC41BB801FD003179D0 /* minion_05.png */; settings = {ASSET_TAGS = (); }; };
-		45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FCB1BB8071A003179D0 /* AIBaseNavController.m */; settings = {ASSET_TAGS = (); }; };
-		45F42FD11BB84E6C003179D0 /* AITemp1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FCF1BB84E6C003179D0 /* AITemp1ViewController.m */; settings = {ASSET_TAGS = (); }; };
-		45F42FD21BB84E6C003179D0 /* AITemp1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FD01BB84E6C003179D0 /* AITemp1ViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		45F42FD61BB84EB1003179D0 /* AITemp2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FD41BB84EB1003179D0 /* AITemp2ViewController.m */; settings = {ASSET_TAGS = (); }; };
-		45F42FD71BB84EB1003179D0 /* AITemp2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FD51BB84EB1003179D0 /* AITemp2ViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FDC1BB84FEF003179D0 /* AITemp3ViewController.m */; settings = {ASSET_TAGS = (); }; };
-		45F42FDF1BB84FEF003179D0 /* AITemp3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		45F42FC51BB801FD003179D0 /* minion_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC01BB801FD003179D0 /* minion_01.png */; };
+		45F42FC61BB801FD003179D0 /* minion_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC11BB801FD003179D0 /* minion_02.png */; };
+		45F42FC71BB801FD003179D0 /* minion_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC21BB801FD003179D0 /* minion_03.png */; };
+		45F42FC81BB801FD003179D0 /* minion_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC31BB801FD003179D0 /* minion_04.png */; };
+		45F42FC91BB801FD003179D0 /* minion_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC41BB801FD003179D0 /* minion_05.png */; };
+		45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FCB1BB8071A003179D0 /* AIBaseNavController.m */; };
+		45F42FD11BB84E6C003179D0 /* AITemp1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FCF1BB84E6C003179D0 /* AITemp1ViewController.m */; };
+		45F42FD21BB84E6C003179D0 /* AITemp1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FD01BB84E6C003179D0 /* AITemp1ViewController.xib */; };
+		45F42FD61BB84EB1003179D0 /* AITemp2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FD41BB84EB1003179D0 /* AITemp2ViewController.m */; };
+		45F42FD71BB84EB1003179D0 /* AITemp2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FD51BB84EB1003179D0 /* AITemp2ViewController.xib */; };
+		45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FDC1BB84FEF003179D0 /* AITemp3ViewController.m */; };
+		45F42FDF1BB84FEF003179D0 /* AITemp3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */; };
+		45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */; };
+		BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC94811C1BB90A93004CA8DA /* UIView+Extension.m */; };
 		BCD502FD1BB63DD100A9E7BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD502FC1BB63DD100A9E7BB /* main.m */; };
 		BCD503001BB63DD100A9E7BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD502FF1BB63DD100A9E7BB /* AppDelegate.m */; };
 		BCD503061BB63DD100A9E7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD503041BB63DD100A9E7BB /* Main.storyboard */; };
@@ -286,6 +287,8 @@
 		45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AITemp3ViewController.xib; sourceTree = "<group>"; };
 		45F42FE11BB8B85E003179D0 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		BC94811B1BB90A93004CA8DA /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		BC94811C1BB90A93004CA8DA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		BCD502F71BB63DD100A9E7BB /* AISian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD502FB1BB63DD100A9E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD502FC1BB63DD100A9E7BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -585,6 +588,8 @@
 		45F42FE01BB8B838003179D0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BC94811B1BB90A93004CA8DA /* UIView+Extension.h */,
+				BC94811C1BB90A93004CA8DA /* UIView+Extension.m */,
 				45F42FE11BB8B85E003179D0 /* UIBarButtonItem+Extension.h */,
 				45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */,
 			);
@@ -1452,6 +1457,7 @@
 			files = (
 				45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */,
 				BCD505051BB65AFB00A9E7BB /* AITabBarViewController.m in Sources */,
+				BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */,
 				45F42FD61BB84EB1003179D0 /* AITemp2ViewController.m in Sources */,
 				BCD5050B1BB65CA400A9E7BB /* AIMessageViewController.m in Sources */,
 				BCD503001BB63DD100A9E7BB /* AppDelegate.m in Sources */,
@@ -1589,7 +1595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1601,7 +1607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -8,22 +8,25 @@
 
 #import "AiHomeViewController.h"
 #import "AITemp1ViewController.h"
+#import "UIBarButtonItem+Extension.h"
+#import "AITemp1ViewController.h"
 @interface AiHomeViewController ()
 @end
 
 @implementation AiHomeViewController
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+
+    //设置导航栏左右按钮
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTagert:self action:@selector(onClickLeftItem:) NorImageName:@"navigationbar_friendsearch" andHeiImageName:@"navigationbar_friendsearch_highlighted"];
+    self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTagert:self action:nil NorImageName:@"navigationbar_pop" andHeiImageName:@"navigationbar_pop_highlighted"];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)onClickLeftItem:(UIBarButtonItem*)item{
+    AITemp1ViewController *temp1VC = [[AITemp1ViewController alloc]init];
+    [self.navigationController pushViewController:temp1VC animated:YES];
 }
 
 #pragma mark - Table view data source
