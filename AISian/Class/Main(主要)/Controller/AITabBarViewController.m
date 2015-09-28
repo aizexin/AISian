@@ -12,6 +12,7 @@
 #import "AIDiscoverViewController.h"
 #import "AiHomeViewController.h"
 #import "AIDefine.h"
+#import "AIBaseNavController.h"
 @interface AITabBarViewController ()
 
 @end
@@ -34,6 +35,8 @@
 }
 
 -(void)addOneChildVC:(UIViewController*)chilidVC title:(NSString*)title imageName:(NSString*)imageName selImageName:(NSString*)selImageName{
+    //设置标题
+    chilidVC.title = title;
     [chilidVC.view setBackgroundColor:AIRandomColor];
     
     chilidVC.tabBarItem.title = title;
@@ -41,7 +44,9 @@
     //被选中的图片
     UIImage *selImage = [[UIImage imageNamed:selImageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     chilidVC.tabBarItem.selectedImage = selImage;
-    [self addChildViewController:chilidVC];
+    //添加导航控制器
+    AIBaseNavController *navVC = [[AIBaseNavController alloc]initWithRootViewController:chilidVC];
+    [self addChildViewController:navVC];
 }
 
 
