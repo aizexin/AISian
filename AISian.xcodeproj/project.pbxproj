@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEE1BB998CD000584FD /* AISearchBar.m */; settings = {ASSET_TAGS = (); }; };
 		45F42FC51BB801FD003179D0 /* minion_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC01BB801FD003179D0 /* minion_01.png */; };
 		45F42FC61BB801FD003179D0 /* minion_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC11BB801FD003179D0 /* minion_02.png */; };
 		45F42FC71BB801FD003179D0 /* minion_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC21BB801FD003179D0 /* minion_03.png */; };
@@ -269,6 +271,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45DFBEEA1BB9979D000584FD /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		45DFBEED1BB998CD000584FD /* AISearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISearchBar.h; sourceTree = "<group>"; };
+		45DFBEEE1BB998CD000584FD /* AISearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISearchBar.m; sourceTree = "<group>"; };
 		45F42FC01BB801FD003179D0 /* minion_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_01.png; sourceTree = "<group>"; };
 		45F42FC11BB801FD003179D0 /* minion_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_02.png; sourceTree = "<group>"; };
 		45F42FC21BB801FD003179D0 /* minion_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_03.png; sourceTree = "<group>"; };
@@ -565,6 +571,8 @@
 		45F42FBF1BB7FE87003179D0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				45DFBEED1BB998CD000584FD /* AISearchBar.h */,
+				45DFBEEE1BB998CD000584FD /* AISearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -592,6 +600,8 @@
 				BC94811C1BB90A93004CA8DA /* UIView+Extension.m */,
 				45F42FE11BB8B85E003179D0 /* UIBarButtonItem+Extension.h */,
 				45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */,
+				45DFBEEA1BB9979D000584FD /* UIImage+Extension.h */,
+				45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1456,6 +1466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */,
+				45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */,
 				BCD505051BB65AFB00A9E7BB /* AITabBarViewController.m in Sources */,
 				BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */,
 				45F42FD61BB84EB1003179D0 /* AITemp2ViewController.m in Sources */,
@@ -1468,6 +1479,7 @@
 				45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */,
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
+				45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

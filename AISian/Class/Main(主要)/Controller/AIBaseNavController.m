@@ -27,6 +27,17 @@
 
 
 +(void)initialize{
+    [self setupBarButtonItemTheme];
+    
+    //设置标题主题
+   UINavigationBar *navBar =  [UINavigationBar appearance];
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[NSFontAttributeName] = AINavigationTitleFont;
+    navBar.titleTextAttributes = dictM;
+
+}
+
++(void)setupBarButtonItemTheme{
     //设置主题
     UIBarButtonItem *item = [UIBarButtonItem appearance];
     item.tintColor = [UIColor orangeColor];
@@ -44,7 +55,6 @@
     NSMutableDictionary *disDictM = [NSMutableDictionary dictionaryWithDictionary:norDictM];
     disDictM[NSForegroundColorAttributeName] = [UIColor lightGrayColor];
     [item setTitleTextAttributes:disDictM forState:(UIControlStateDisabled)];
-
 }
 
 - (void)viewDidLoad {

@@ -9,10 +9,18 @@
 #ifndef AIweichat_AIDefine_h
 #define AIweichat_AIDefine_h
 
-#define AILog(...) NSLog(__VA_ARGS__)
+
 #define Mainsize ([[UIScreen mainScreen]bounds].size)
 // 随机色
 #define AIRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
 // 是否为iOS7
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+// 导航栏标题的字体
+#define AINavigationTitleFont [UIFont boldSystemFontOfSize:20]
+#endif
+
+#ifdef DEBUG//调试阶段的log
+#define AILog(...) NSLog(__VA_ARGS__)
+#else
+#define AILog(...)
 #endif

@@ -7,7 +7,9 @@
 //
 
 #import "AIDiscoverViewController.h"
-
+#import "UIView+Extension.h"
+#import "UIImage+Extension.h"
+#import "AISearchBar.h"
 @interface AIDiscoverViewController ()
 
 @end
@@ -17,12 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"系统设置" style:UIBarButtonItemStyleDone target:nil action:nil];
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    AISearchBar *searchBar = [AISearchBar searchBar];
+    searchBar.size = CGSizeMake(300, 30);
+    self.navigationItem.titleView = searchBar;
 }
 
 - (void)didReceiveMemoryWarning {

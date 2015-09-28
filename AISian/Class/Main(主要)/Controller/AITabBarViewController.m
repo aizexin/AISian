@@ -29,7 +29,7 @@
     [self addOneChildVC:messageVC title:@"消息" imageName:@"tabbar_message_center" selImageName:@"tabbar_message_center_selected"];
     
     AIDiscoverViewController *discoverVC = [[AIDiscoverViewController alloc]init];
-    [self addOneChildVC:discoverVC title:@"首页" imageName:@"tabbar_discover" selImageName:@"tabbar_discover_selected"];
+    [self addOneChildVC:discoverVC title:@"发现" imageName:@"tabbar_discover" selImageName:@"tabbar_discover_selected"];
     AIProfileViewController *profile = [[AIProfileViewController alloc]init];
     [self addOneChildVC:profile title:@"我" imageName:@"tabbar_profile" selImageName:@"tabbar_profile_selected"];
 }
