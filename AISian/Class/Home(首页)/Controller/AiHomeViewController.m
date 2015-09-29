@@ -10,6 +10,8 @@
 #import "AITemp1ViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "AITemp1ViewController.h"
+#import "AIHomeTitleButton.h"
+#import "UIImage+Extension.h"
 @interface AiHomeViewController ()
 @end
 
@@ -22,6 +24,14 @@
     //设置导航栏左右按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTagert:self action:@selector(onClickLeftItem:) NorImageName:@"navigationbar_friendsearch" andHeiImageName:@"navigationbar_friendsearch_highlighted"];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTagert:self action:nil NorImageName:@"navigationbar_pop" andHeiImageName:@"navigationbar_pop_highlighted"];
+    
+    //
+    AIHomeTitleButton *titleBtn = [[AIHomeTitleButton alloc]init];
+    [titleBtn setTitle:@"首页首页" forState:(UIControlStateNormal)];
+    UIImage *bgImage = [UIImage imageNamed:@"navigationbar_arrow_down"];
+//    [titleBtn setImage:bgImage forState:(UIControlStateNormal)];
+    self.navigationItem.titleView = titleBtn;
+    
 }
 
 -(void)onClickLeftItem:(UIBarButtonItem*)item{

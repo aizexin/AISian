@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEE1BB998CD000584FD /* AISearchBar.m */; settings = {ASSET_TAGS = (); }; };
+		45DFBEF21BB9A291000584FD /* AIHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF11BB9A291000584FD /* AIHomeTitleButton.m */; settings = {ASSET_TAGS = (); }; };
+		45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF41BB9A624000584FD /* NSString+Extension.m */; settings = {ASSET_TAGS = (); }; };
 		45F42FC51BB801FD003179D0 /* minion_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC01BB801FD003179D0 /* minion_01.png */; };
 		45F42FC61BB801FD003179D0 /* minion_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC11BB801FD003179D0 /* minion_02.png */; };
 		45F42FC71BB801FD003179D0 /* minion_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC21BB801FD003179D0 /* minion_03.png */; };
@@ -275,6 +277,10 @@
 		45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		45DFBEED1BB998CD000584FD /* AISearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISearchBar.h; sourceTree = "<group>"; };
 		45DFBEEE1BB998CD000584FD /* AISearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISearchBar.m; sourceTree = "<group>"; };
+		45DFBEF01BB9A291000584FD /* AIHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIHomeTitleButton.h; path = "AISian/Class/Main(主要)/View/AIHomeTitleButton.h"; sourceTree = SOURCE_ROOT; };
+		45DFBEF11BB9A291000584FD /* AIHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIHomeTitleButton.m; path = "AISian/Class/Main(主要)/View/AIHomeTitleButton.m"; sourceTree = SOURCE_ROOT; };
+		45DFBEF31BB9A624000584FD /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		45DFBEF41BB9A624000584FD /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		45F42FC01BB801FD003179D0 /* minion_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_01.png; sourceTree = "<group>"; };
 		45F42FC11BB801FD003179D0 /* minion_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_02.png; sourceTree = "<group>"; };
 		45F42FC21BB801FD003179D0 /* minion_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_03.png; sourceTree = "<group>"; };
@@ -602,6 +608,8 @@
 				45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */,
 				45DFBEEA1BB9979D000584FD /* UIImage+Extension.h */,
 				45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */,
+				45DFBEF31BB9A624000584FD /* NSString+Extension.h */,
+				45DFBEF41BB9A624000584FD /* NSString+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1047,6 +1055,8 @@
 		BCD504F81BB659A800A9E7BB /* VIew */ = {
 			isa = PBXGroup;
 			children = (
+				45DFBEF01BB9A291000584FD /* AIHomeTitleButton.h */,
+				45DFBEF11BB9A291000584FD /* AIHomeTitleButton.m */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -1477,9 +1487,11 @@
 				BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */,
 				BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */,
 				45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */,
+				45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */,
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
 				45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */,
+				45DFBEF21BB9A291000584FD /* AIHomeTitleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
