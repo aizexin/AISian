@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; settings = {ASSET_TAGS = (); }; };
-		45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEE1BB998CD000584FD /* AISearchBar.m */; settings = {ASSET_TAGS = (); }; };
-		45DFBEF21BB9A291000584FD /* AIHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF11BB9A291000584FD /* AIHomeTitleButton.m */; settings = {ASSET_TAGS = (); }; };
-		45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF41BB9A624000584FD /* NSString+Extension.m */; settings = {ASSET_TAGS = (); }; };
+		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; };
+		45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEE1BB998CD000584FD /* AISearchBar.m */; };
+		45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF41BB9A624000584FD /* NSString+Extension.m */; };
 		45F42FC51BB801FD003179D0 /* minion_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC01BB801FD003179D0 /* minion_01.png */; };
 		45F42FC61BB801FD003179D0 /* minion_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC11BB801FD003179D0 /* minion_02.png */; };
 		45F42FC71BB801FD003179D0 /* minion_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FC21BB801FD003179D0 /* minion_03.png */; };
@@ -25,10 +24,11 @@
 		45F42FDF1BB84FEF003179D0 /* AITemp3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */; };
 		45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */; };
 		BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC94811C1BB90A93004CA8DA /* UIView+Extension.m */; };
+		BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9985021BBA949200CA858C /* AIHomeTitleButton.m */; };
+		BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9985051BBA94BD00CA858C /* AIPopMenu.m */; };
 		BCD502FD1BB63DD100A9E7BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD502FC1BB63DD100A9E7BB /* main.m */; };
 		BCD503001BB63DD100A9E7BB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD502FF1BB63DD100A9E7BB /* AppDelegate.m */; };
 		BCD503061BB63DD100A9E7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BCD503041BB63DD100A9E7BB /* Main.storyboard */; };
-		BCD503081BB63DD100A9E7BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCD503071BB63DD100A9E7BB /* Images.xcassets */; };
 		BCD5030B1BB63DD100A9E7BB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCD503091BB63DD100A9E7BB /* LaunchScreen.xib */; };
 		BCD503171BB63DD100A9E7BB /* AISianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD503161BB63DD100A9E7BB /* AISianTests.m */; };
 		BCD504041BB6417100A9E7BB /* d_aini@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BCD503221BB6417000A9E7BB /* d_aini@2x.png */; };
@@ -260,6 +260,7 @@
 		BCD5050B1BB65CA400A9E7BB /* AIMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5050A1BB65CA400A9E7BB /* AIMessageViewController.m */; };
 		BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5050D1BB65CB900A9E7BB /* AIProfileViewController.m */; };
 		BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505101BB65D1500A9E7BB /* AiHomeViewController.m */; };
+		BCEECC621BBA505F0062C5BE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEECC611BBA505F0062C5BE /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,8 +278,6 @@
 		45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		45DFBEED1BB998CD000584FD /* AISearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISearchBar.h; sourceTree = "<group>"; };
 		45DFBEEE1BB998CD000584FD /* AISearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AISearchBar.m; sourceTree = "<group>"; };
-		45DFBEF01BB9A291000584FD /* AIHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AIHomeTitleButton.h; path = "AISian/Class/Main(主要)/View/AIHomeTitleButton.h"; sourceTree = SOURCE_ROOT; };
-		45DFBEF11BB9A291000584FD /* AIHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AIHomeTitleButton.m; path = "AISian/Class/Main(主要)/View/AIHomeTitleButton.m"; sourceTree = SOURCE_ROOT; };
 		45DFBEF31BB9A624000584FD /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
 		45DFBEF41BB9A624000584FD /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		45F42FC01BB801FD003179D0 /* minion_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minion_01.png; sourceTree = "<group>"; };
@@ -301,13 +300,16 @@
 		45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		BC94811B1BB90A93004CA8DA /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		BC94811C1BB90A93004CA8DA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		BC9985011BBA949200CA858C /* AIHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeTitleButton.h; sourceTree = "<group>"; };
+		BC9985021BBA949200CA858C /* AIHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIHomeTitleButton.m; sourceTree = "<group>"; };
+		BC9985041BBA94BD00CA858C /* AIPopMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIPopMenu.h; sourceTree = "<group>"; };
+		BC9985051BBA94BD00CA858C /* AIPopMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIPopMenu.m; sourceTree = "<group>"; };
 		BCD502F71BB63DD100A9E7BB /* AISian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AISian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD502FB1BB63DD100A9E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BCD502FC1BB63DD100A9E7BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BCD502FE1BB63DD100A9E7BB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../../AppDelegate.h; sourceTree = "<group>"; };
 		BCD502FF1BB63DD100A9E7BB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../../AppDelegate.m; sourceTree = "<group>"; };
 		BCD503051BB63DD100A9E7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BCD503071BB63DD100A9E7BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BCD5030A1BB63DD100A9E7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BCD503101BB63DD100A9E7BB /* AISianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AISianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCD503151BB63DD100A9E7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 		BCD5050F1BB65D1500A9E7BB /* AiHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AiHomeViewController.h; sourceTree = "<group>"; };
 		BCD505101BB65D1500A9E7BB /* AiHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AiHomeViewController.m; sourceTree = "<group>"; };
 		BCD505121BB65E4400A9E7BB /* AIDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefine.h; sourceTree = "<group>"; };
+		BCEECC611BBA505F0062C5BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -614,6 +617,31 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		BC9984FE1BBA946200CA858C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BC9984FF1BBA946200CA858C /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		BC9985001BBA946200CA858C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BC9985011BBA949200CA858C /* AIHomeTitleButton.h */,
+				BC9985021BBA949200CA858C /* AIHomeTitleButton.m */,
+				BC9985041BBA94BD00CA858C /* AIPopMenu.h */,
+				BC9985051BBA94BD00CA858C /* AIPopMenu.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		BCD502EE1BB63DD100A9E7BB = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +666,7 @@
 				BCD504E91BB6592B00A9E7BB /* Class */,
 				BCD503041BB63DD100A9E7BB /* Main.storyboard */,
 				BCD503091BB63DD100A9E7BB /* LaunchScreen.xib */,
+				BCEECC611BBA505F0062C5BE /* Images.xcassets */,
 				BCD502FA1BB63DD100A9E7BB /* Supporting Files */,
 			);
 			path = AISian;
@@ -646,7 +675,6 @@
 		BCD502FA1BB63DD100A9E7BB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BCD503071BB63DD100A9E7BB /* Images.xcassets */,
 				45F42FC01BB801FD003179D0 /* minion_01.png */,
 				45F42FC11BB801FD003179D0 /* minion_02.png */,
 				45F42FC21BB801FD003179D0 /* minion_03.png */,
@@ -1021,10 +1049,10 @@
 		BCD504F41BB659A800A9E7BB /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				BC9984FE1BBA946200CA858C /* Model */,
+				BC9984FF1BBA946200CA858C /* Other */,
+				BC9985001BBA946200CA858C /* View */,
 				BCD504F51BB659A800A9E7BB /* Controller */,
-				BCD504F61BB659A800A9E7BB /* Model */,
-				BCD504F71BB659A800A9E7BB /* Other */,
-				BCD504F81BB659A800A9E7BB /* VIew */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -1036,29 +1064,6 @@
 				BCD505101BB65D1500A9E7BB /* AiHomeViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BCD504F61BB659A800A9E7BB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		BCD504F71BB659A800A9E7BB /* Other */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		BCD504F81BB659A800A9E7BB /* VIew */ = {
-			isa = PBXGroup;
-			children = (
-				45DFBEF01BB9A291000584FD /* AIHomeTitleButton.h */,
-				45DFBEF11BB9A291000584FD /* AIHomeTitleButton.m */,
-			);
-			path = VIew;
 			sourceTree = "<group>";
 		};
 		BCD504F91BB659A800A9E7BB /* Message(消息) */ = {
@@ -1192,6 +1197,7 @@
 				TargetAttributes = {
 					BCD502F61BB63DD100A9E7BB = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = Y56852HD87;
 					};
 					BCD5030F1BB63DD100A9E7BB = {
 						CreatedOnToolsVersion = 6.3;
@@ -1389,6 +1395,7 @@
 				BCD504DB1BB6417100A9E7BB /* lxh_zaokuangzheng.gif in Resources */,
 				BCD504D71BB6417100A9E7BB /* lxh_youyali@2x.png in Resources */,
 				BCD504D61BB6417100A9E7BB /* lxh_youyali.png in Resources */,
+				BCEECC621BBA505F0062C5BE /* Images.xcassets in Resources */,
 				BCD504651BB6417100A9E7BB /* w_xianhua@2x.png in Resources */,
 				BCD504B41BB6417100A9E7BB /* lxh_qiubite.gif in Resources */,
 				BCD5045D1BB6417100A9E7BB /* o_weiguan@2x.png in Resources */,
@@ -1454,7 +1461,6 @@
 				BCD504BD1BB6417100A9E7BB /* lxh_shuaishuaishou.gif in Resources */,
 				BCD504301BB6417100A9E7BB /* d_travel@2x.png in Resources */,
 				BCD5048C1BB6417100A9E7BB /* lxh_haoxihuan.png in Resources */,
-				BCD503081BB63DD100A9E7BB /* Images.xcassets in Resources */,
 				BCD504961BB6417100A9E7BB /* lxh_jiujie@2x.png in Resources */,
 				BCD504281BB6417100A9E7BB /* d_shengbing@2x.png in Resources */,
 				BCD504601BB6417100A9E7BB /* o_zhong@2x.png in Resources */,
@@ -1484,14 +1490,15 @@
 				BCD503001BB63DD100A9E7BB /* AppDelegate.m in Sources */,
 				BCD502FD1BB63DD100A9E7BB /* main.m in Sources */,
 				45F42FD11BB84E6C003179D0 /* AITemp1ViewController.m in Sources */,
+				BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */,
 				BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */,
 				BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */,
 				45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */,
 				45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */,
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
+				BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */,
 				45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */,
-				45DFBEF21BB9A291000584FD /* AIHomeTitleButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1620,10 +1627,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1632,10 +1642,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

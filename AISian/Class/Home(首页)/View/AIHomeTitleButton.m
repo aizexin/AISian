@@ -8,6 +8,7 @@
 
 #import "AIHomeTitleButton.h"
 #import "AIDefine.h"
+#import "UIView+Extension.h"
 @implementation AIHomeTitleButton
 
 
@@ -17,11 +18,13 @@
     if (self) {
         //设置图片居中
         [self.imageView setContentMode:(UIViewContentModeCenter)];
-        [self.imageView setBackgroundColor:[UIColor redColor]];
-        [self.titleLabel setBackgroundColor:[UIColor greenColor]];
+        [self setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+//        [self.imageView setBackgroundColor:[UIColor redColor]];
+//        [self.titleLabel setBackgroundColor:[UIColor greenColor]];
         //设置文字右对齐
         [self.titleLabel setTextAlignment:(NSTextAlignmentRight)];
-        
+        // 高亮的时候不需要调整内部的图片为灰色
+        self.adjustsImageWhenHighlighted = NO;
     }
     return self;
 }
@@ -39,9 +42,9 @@
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
    
     CGFloat Y = 0;
-    CGFloat W = contentRect.size.height;
-    CGFloat H = contentRect.size.height;
-    CGFloat X = contentRect.size.width - W;
+    CGFloat W = self.height;
+    CGFloat H = self.height;
+    CGFloat X = self.width-self.height;
     return CGRectMake(X, Y, W, H);
 }
 @end
