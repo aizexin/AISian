@@ -14,7 +14,8 @@
 #import "AIDefine.h"
 #import "AIBaseNavController.h"
 #import "AITabBar.h"
-@interface AITabBarViewController ()
+#import "AIComposeViewController.h"
+@interface AITabBarViewController ()<AITabBarDelegate>
 
 @end
 
@@ -27,7 +28,7 @@
     
     //调整tabBar
     AITabBar *customTabBar = [[AITabBar alloc]init];
-    customTabBar.delegate = self;
+    customTabBar.plusDelegate = self;
     [self setValue:customTabBar forKey:@"tabBar"];
 }
 
@@ -73,7 +74,13 @@
     AIBaseNavController *navVC = [[AIBaseNavController alloc]initWithRootViewController:chilidVC];
     [self addChildViewController:navVC];
 }
-
+#pragma mark -AITabBarDelegate
+-(void)tabBarDidClickedPlusButton:(AITabBar *)tabBar{
+    AIComposeViewController *composeVC = [[AIComposeViewController alloc]init];
+    composeVC.title = @"发微博";
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:composeVC];
+    [self presentViewController:nav animated:YES completion:nil];
+}
 
 
 @end

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AITabBar : UITabBar
+@class AITabBar;
+@protocol AITabBarDelegate <NSObject>
 
+-(void)tabBarDidClickedPlusButton:(AITabBar*)tabBar;
+
+@end
+@interface AITabBar : UITabBar
+@property(nonatomic,weak)id<AITabBarDelegate> plusDelegate;
 @end
