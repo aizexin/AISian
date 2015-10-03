@@ -45,6 +45,7 @@
     NSMutableDictionary *norDictM = [NSMutableDictionary dictionary];
     norDictM[NSFontAttributeName] = [UIFont systemFontOfSize:15];
     // UIOffsetZero是结构体, 只要包装成NSValue对象, 才能放进字典\数组中
+#warning  UITextAttributeTextShadowOffset 弃用的函数可以用
     norDictM[UITextAttributeTextShadowOffset] = [NSValue valueWithUIOffset:UIOffsetZero];
     [item setTitleTextAttributes:norDictM forState:(UIControlStateNormal)];
     //设置高亮状态字体

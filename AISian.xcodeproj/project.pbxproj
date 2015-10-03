@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4528377D1BBFB3AD00EB31BF /* AITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528377C1BBFB3AD00EB31BF /* AITabBar.m */; settings = {ASSET_TAGS = (); }; };
 		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; };
 		45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEE1BB998CD000584FD /* AISearchBar.m */; };
 		45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF41BB9A624000584FD /* NSString+Extension.m */; };
@@ -274,6 +275,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4528377B1BBFB3AD00EB31BF /* AITabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AITabBar.h; sourceTree = "<group>"; };
+		4528377C1BBFB3AD00EB31BF /* AITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITabBar.m; sourceTree = "<group>"; };
 		45DFBEEA1BB9979D000584FD /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		45DFBEED1BB998CD000584FD /* AISearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISearchBar.h; sourceTree = "<group>"; };
@@ -582,6 +585,8 @@
 			children = (
 				45DFBEED1BB998CD000584FD /* AISearchBar.h */,
 				45DFBEEE1BB998CD000584FD /* AISearchBar.m */,
+				4528377B1BBFB3AD00EB31BF /* AITabBar.h */,
+				4528377C1BBFB3AD00EB31BF /* AITabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1192,7 +1197,7 @@
 		BCD502EF1BB63DD100A9E7BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = aizexin;
 				TargetAttributes = {
 					BCD502F61BB63DD100A9E7BB = {
@@ -1498,6 +1503,7 @@
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
 				BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */,
+				4528377D1BBFB3AD00EB31BF /* AITabBar.m in Sources */,
 				45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1561,6 +1567,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1626,12 +1633,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1641,12 +1649,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = BrandAsset;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = AISian/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1666,6 +1675,7 @@
 				);
 				INFOPLIST_FILE = AISianTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AISian.app/AISian";
 			};
@@ -1681,6 +1691,7 @@
 				);
 				INFOPLIST_FILE = AISianTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AI.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AISian.app/AISian";
 			};

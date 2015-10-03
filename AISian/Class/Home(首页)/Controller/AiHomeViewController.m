@@ -17,6 +17,7 @@
 #import "AIPopMenu.h"
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
+@property(nonatomic,strong)AIPopMenu *popMenu;
 @end
 
 @implementation AiHomeViewController
@@ -54,11 +55,16 @@
  *  点击标题
  */
 -(void)onClickTitleItem:(AIHomeTitleButton*)btn{
-    [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:(UIControlStateNormal)];
-    AIPopMenu *popMenu = [AIPopMenu popMenuWithContentView:[[UISwitch alloc]init]];
-    popMenu.delegate = self;
-    [popMenu showInRect:CGRectMake(100, 0, 100, 100)];
-    [self.view addSubview:popMenu];
+    UIImage *image = [UIImage imageNamed:@"navigationbar_arrow_down"];
+    if ([image isEqual: [btn imageForState:(UIControlStateNormal)]]) {
+        [btn setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:(UIControlStateNormal)];
+        self.popMenu = [AIPopMenu popMenuWithContentView:[[UISwitch alloc]init]];
+        self.popMenu.delegate = self;
+        [self.popMenu showInRect:CGRectMake(100, 0, 100, 100)];
+        [self.view addSubview:self.popMenu];
+    }else{
+        [_popMenu dismiss];
+    }
 }
 #pragma  mark -AIPopMenuDelegate
 -(void)popMenuDisMiss:(AIPopMenu *)popMenu{

@@ -51,7 +51,6 @@
 }
 -(void)layoutSubviews{
     [super layoutSubviews];
-    NSLog(@"%@",NSStringFromCGRect(self.bounds));
     self.cover.frame = self.bounds;
 }
 #pragma mark -初始化方法

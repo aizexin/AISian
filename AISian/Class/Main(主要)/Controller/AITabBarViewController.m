@@ -13,6 +13,7 @@
 #import "AiHomeViewController.h"
 #import "AIDefine.h"
 #import "AIBaseNavController.h"
+#import "AITabBar.h"
 @interface AITabBarViewController ()
 
 @end
@@ -22,6 +23,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     //添加子视图控制器
+    [self addAllChildVcs];
+    
+    //调整tabBar
+    AITabBar *customTabBar = [[AITabBar alloc]init];
+    [self setValue:customTabBar forKey:@"tabBar"];
+}
+
+- (void)addAllChildVcs{
     AiHomeViewController *homeVC = [[AiHomeViewController alloc]init];
     [self addOneChildVC:homeVC title:@"首页" imageName:@"tabbar_home" selImageName:@"tabbar_home_selected"];
     
@@ -33,13 +42,28 @@
     AIProfileViewController *profile = [[AIProfileViewController alloc]init];
     [self addOneChildVC:profile title:@"我" imageName:@"tabbar_profile" selImageName:@"tabbar_profile_selected"];
 }
-
+/**
+ *  添加自控制器
+ *
+ *  @param chilidVC     自控制器
+ *  @param title        标题
+ *  @param imageName    正常图片
+ *  @param selImageName 被选中图片
+ */
 -(void)addOneChildVC:(UIViewController*)chilidVC title:(NSString*)title imageName:(NSString*)imageName selImageName:(NSString*)selImageName{
     //设置标题
     chilidVC.title = title;
-    [chilidVC.view setBackgroundColor:AIRandomColor];
-    
-    chilidVC.tabBarItem.title = title;
+    //设置正常文字颜色
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+    dictM[NSForegroundColorAttributeName] = [UIColor blackColor];
+    [chilidVC.tabBarItem setTitleTextAttributes:dictM forState:(UIControlStateNormal)];
+    //设置被选中文字颜色
+    NSMutableDictionary *seldictM = [NSMutableDictionary dictionary];
+    seldictM[NSFontAttributeName] = [UIFont systemFontOfSize:10];
+    seldictM[NSForegroundColorAttributeName] = [UIColor orangeColor];
+    [chilidVC.tabBarItem setTitleTextAttributes:seldictM forState:(UIControlStateSelected)];
+    //设置正常图片
     chilidVC.tabBarItem.image = [[UIImage imageNamed:imageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
     //被选中的图片
     UIImage *selImage = [[UIImage imageNamed:selImageName]imageWithRenderingMode:(UIImageRenderingModeAlwaysOriginal)];
