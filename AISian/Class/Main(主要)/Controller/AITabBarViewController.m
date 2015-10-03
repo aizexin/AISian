@@ -27,6 +27,7 @@
     
     //调整tabBar
     AITabBar *customTabBar = [[AITabBar alloc]init];
+    customTabBar.delegate = self;
     [self setValue:customTabBar forKey:@"tabBar"];
 }
 
