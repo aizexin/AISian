@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AITabBarViewController.h"
+#import "AINewFeatureViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -19,7 +20,24 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds ;
     AITabBarViewController *tabBarVC = [[AITabBarViewController alloc]init];
-    self.window.rootViewController = tabBarVC;
+    
+    
+    //判断版本号
+    NSString *versionKey = (__bridge NSString*)kCFBundleVersionKey;
+    NSUserDefaults *defalut = [NSUserDefaults standardUserDefaults];
+    //取出上个版本号
+    NSString *lastVersion = [defalut valueForKey:versionKey];
+    //获得当前版本号
+    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
+    if ([lastVersion isEqualToString:currentVersion]) {
+        self.window.rootViewController = tabBarVC;
+    }else{
+        AINewFeatureViewController *newFeature = [[AINewFeatureViewController alloc]init];
+        self.window.rootViewController = newFeature;
+        [defalut setValue:currentVersion forKey:versionKey];
+    }
+    
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

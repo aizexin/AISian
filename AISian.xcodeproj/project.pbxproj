@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4528377D1BBFB3AD00EB31BF /* AITabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 4528377C1BBFB3AD00EB31BF /* AITabBar.m */; settings = {ASSET_TAGS = (); }; };
 		452837821BBFDB9700EB31BF /* AIComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452837811BBFDB9700EB31BF /* AIComposeViewController.m */; settings = {ASSET_TAGS = (); }; };
+		452837891BBFE4BF00EB31BF /* AINewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452837881BBFE4BF00EB31BF /* AINewFeatureViewController.m */; settings = {ASSET_TAGS = (); }; };
 		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; };
 		45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEE1BB998CD000584FD /* AISearchBar.m */; };
 		45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEF41BB9A624000584FD /* NSString+Extension.m */; };
@@ -280,6 +281,8 @@
 		4528377C1BBFB3AD00EB31BF /* AITabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AITabBar.m; sourceTree = "<group>"; };
 		452837801BBFDB9700EB31BF /* AIComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIComposeViewController.h; sourceTree = "<group>"; };
 		452837811BBFDB9700EB31BF /* AIComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIComposeViewController.m; sourceTree = "<group>"; };
+		452837871BBFE4BF00EB31BF /* AINewFeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AINewFeatureViewController.h; sourceTree = "<group>"; };
+		452837881BBFE4BF00EB31BF /* AINewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AINewFeatureViewController.m; sourceTree = "<group>"; };
 		45DFBEEA1BB9979D000584FD /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		45DFBEED1BB998CD000584FD /* AISearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AISearchBar.h; sourceTree = "<group>"; };
@@ -589,6 +592,23 @@
 			children = (
 				452837801BBFDB9700EB31BF /* AIComposeViewController.h */,
 				452837811BBFDB9700EB31BF /* AIComposeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		452837851BBFDF0500EB31BF /* NewFeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				452837861BBFDF0500EB31BF /* Controller */,
+			);
+			path = "NewFeature(新特性)";
+			sourceTree = "<group>";
+		};
+		452837861BBFDF0500EB31BF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				452837871BBFE4BF00EB31BF /* AINewFeatureViewController.h */,
+				452837881BBFE4BF00EB31BF /* AINewFeatureViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -987,6 +1007,7 @@
 		BCD504E91BB6592B00A9E7BB /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				452837851BBFDF0500EB31BF /* NewFeature(新特性) */,
 				4528377E1BBFDB5E00EB31BF /* Compose(发微博) */,
 				45F42FCD1BB84E3C003179D0 /* temp */,
 				BCD504EF1BB659A800A9E7BB /* Discover(发现) */,
@@ -1520,6 +1541,7 @@
 				BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */,
 				BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */,
 				BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */,
+				452837891BBFE4BF00EB31BF /* AINewFeatureViewController.m in Sources */,
 				45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */,
 				45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */,
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
