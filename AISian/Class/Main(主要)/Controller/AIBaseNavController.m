@@ -8,7 +8,7 @@
 
 #import "AIBaseNavController.h"
 #import "UIBarButtonItem+Extension.h"
-#include "AIDefine.h"
+#import "AIDefine.h"
 @interface AIBaseNavController ()
 
 @end

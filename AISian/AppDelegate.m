@@ -35,6 +35,7 @@
         AINewFeatureViewController *newFeature = [[AINewFeatureViewController alloc]init];
         self.window.rootViewController = newFeature;
         [defalut setValue:currentVersion forKey:versionKey];
+        [defalut synchronize];
     }
     
     
