@@ -17,10 +17,13 @@
  *access_token的生命周期，单位是秒数。
  */
 @property(nonatomic ,copy)NSString *expires_in;
-
 /**
  * 当前授权用户的UID。
  */
 @property(nonatomic ,copy)NSString *uid;
+/**
+ *  判断是否过期
+ */
+@property(nonatomic, assign,getter=isOverdue)BOOL overdue;
 +(instancetype)accountWithDict:(NSDictionary*)dict;
 @end

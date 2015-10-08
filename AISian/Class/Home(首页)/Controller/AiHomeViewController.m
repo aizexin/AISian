@@ -15,9 +15,17 @@
 #import "AIDefine.h"
 #import "UIView+Extension.h"
 #import "AIPopMenu.h"
+#import "AFHTTPSessionManager.h"
+#import "AIAccountTool.h"
+#import "AIAccountModel.h"
+#import "MJExtension.h"
+#import "AIStatusesModel.h"
+#import "UIImageView+AFNetworking.h"
+#import "AIUserModel.h"
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
 @property(nonatomic,strong)AIPopMenu *popMenu;
+@property(nonatomic,strong)NSMutableArray *statuses;
 @end
 
 @implementation AiHomeViewController
@@ -25,11 +33,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     AILog(@"%@",NSHomeDirectory());
     [self setupNavBar];
-    
+    //加载数据
+    [self loadNewData];
+    AILog(@"");
 }
+/**
+ *  加载数据
+ */
+- (void)loadNewData{
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    //从沙盒中获得accessToken
+    AIAccountModel *account = [AIAccountTool account];
+    params[@"access_token"] = account.access_token;
+    //get请求
+    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        AILog(@"请求成功");
+        NSArray *statuses = responseObject[@"statuses"];
+        self.statuses = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        AILog(@"请求失败%@",error.description);
+    }];
+}
+/**
+ *  设置navBar
+ */
 -(void)setupNavBar{
     //设置导航栏左右按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTagert:self action:@selector(onClickLeftItem:) NorImageName:@"navigationbar_friendsearch" andHeiImageName:@"navigationbar_friendsearch_highlighted"];
@@ -70,35 +102,32 @@
         [_popMenu dismiss];
     }
 }
+
 #pragma  mark -AIPopMenuDelegate
 -(void)popMenuDisMiss:(AIPopMenu *)popMenu{
     [_titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:(UIControlStateNormal)];
     [popMenu removeFromSuperview];
 }
+
 #pragma mark - Table view data source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return self.statuses.count;
 }
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *identifier = @"cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier ];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"首页测试数据%ld",indexPath.row];
+    AIStatusesModel *statuse = self.statuses[indexPath.row];
+    cell.textLabel.text = statuse.text;
+    [cell.imageView setImageWithURL:[NSURL URLWithString:statuse.user.profile_image_url]];
     return cell;
 }
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AITemp1ViewController *temp1VC = [[AITemp1ViewController alloc]init];
     [self.navigationController pushViewController:temp1VC animated:YES];
 }
-
-
-
 
 @end

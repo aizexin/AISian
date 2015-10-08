@@ -25,9 +25,7 @@
     self.window.frame = [UIScreen mainScreen].bounds ;
     [self.window makeKeyAndVisible];
     AIAccountModel *account = [AIAccountTool account];
-    /*
-    
-    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:path];*/
+  
     if (account.access_token) {
         [AIControllerTool chooseRootController];
     }else{
@@ -35,8 +33,6 @@
         self.window.rootViewController = oauthVC;
     }
 
- 
-    
     return YES;
 }
 

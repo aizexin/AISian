@@ -58,6 +58,8 @@
 		BC01DC031BC65B08008F6438 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC01DBF61BC65B08008F6438 /* NSObject+MJKeyValue.m */; };
 		BC01DC041BC65B08008F6438 /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = BC01DBF81BC65B08008F6438 /* NSObject+MJProperty.m */; };
 		BC01DC051BC65B08008F6438 /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC01DBFA1BC65B08008F6438 /* NSString+MJExtension.m */; };
+		BC47EDDC1BC672B6000A02C7 /* AIUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */; };
+		BC47EDDF1BC672D3000A02C7 /* AIStatusesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EDDE1BC672D3000A02C7 /* AIStatusesModel.m */; };
 		BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC94811C1BB90A93004CA8DA /* UIView+Extension.m */; };
 		BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9985021BBA949200CA858C /* AIHomeTitleButton.m */; };
 		BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9985051BBA94BD00CA858C /* AIPopMenu.m */; };
@@ -183,6 +185,10 @@
 		BC01DBF81BC65B08008F6438 /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		BC01DBF91BC65B08008F6438 /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		BC01DBFA1BC65B08008F6438 /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		BC47EDDA1BC672B6000A02C7 /* AIUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserModel.h; sourceTree = "<group>"; };
+		BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserModel.m; sourceTree = "<group>"; };
+		BC47EDDD1BC672D3000A02C7 /* AIStatusesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusesModel.h; sourceTree = "<group>"; };
+		BC47EDDE1BC672D3000A02C7 /* AIStatusesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusesModel.m; sourceTree = "<group>"; };
 		BC94811B1BB90A93004CA8DA /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		BC94811C1BB90A93004CA8DA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		BC9985011BBA949200CA858C /* AIHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeTitleButton.h; sourceTree = "<group>"; };
@@ -458,6 +464,10 @@
 		BC9984FE1BBA946200CA858C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC47EDDA1BC672B6000A02C7 /* AIUserModel.h */,
+				BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */,
+				BC47EDDD1BC672D3000A02C7 /* AIStatusesModel.h */,
+				BC47EDDE1BC672D3000A02C7 /* AIStatusesModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -836,6 +846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC01DB401BC600D3008F6438 /* AFURLConnectionOperation.m in Sources */,
+				BC47EDDF1BC672D3000A02C7 /* AIStatusesModel.m in Sources */,
 				BC01DC011BC65B08008F6438 /* NSObject+MJClass.m in Sources */,
 				BC01DC041BC65B08008F6438 /* NSObject+MJProperty.m in Sources */,
 				BC01DB7D1BC62AD7008F6438 /* AIControllerTool.m in Sources */,
@@ -881,6 +892,7 @@
 				BC01DBFE1BC65B08008F6438 /* MJProperty.m in Sources */,
 				BC01DB491BC600D3008F6438 /* UIProgressView+AFNetworking.m in Sources */,
 				45DFBEF51BB9A624000584FD /* NSString+Extension.m in Sources */,
+				BC47EDDC1BC672B6000A02C7 /* AIUserModel.m in Sources */,
 				BC01DBFD1BC65B08008F6438 /* MJFoundation.m in Sources */,
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BC01DBFC1BC65B08008F6438 /* MJExtensionConst.m in Sources */,

@@ -19,7 +19,8 @@
 +(AIAccountModel *)account{
     //接档
     AIAccountModel *account = [NSKeyedUnarchiver unarchiveObjectWithFile:PATH];
-    //判断是否过期
+#warning  判断是否过期
+//    NSDate *now = [NSDate date];
     return account;
 }
 
