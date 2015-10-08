@@ -31,6 +31,7 @@
     
     //设置标题主题
    UINavigationBar *navBar =  [UINavigationBar appearance];
+
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     dictM[NSFontAttributeName] = AINavigationTitleFont;
     navBar.titleTextAttributes = dictM;
