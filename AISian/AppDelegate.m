@@ -10,6 +10,9 @@
 #import "AITabBarViewController.h"
 #import "AINewFeatureViewController.h"
 #import "AIOAuthViewController.h"
+#import "AIControllerTool.h"
+#import "AIAccountModel.h"
+#import "AIAccountTool.h"
 @interface AppDelegate ()
 
 @end
@@ -20,28 +23,20 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds ;
-//    AITabBarViewController *tabBarVC = [[AITabBarViewController alloc]init];
-//    
-//    
-//    //判断版本号
-//    NSString *versionKey = (__bridge NSString*)kCFBundleVersionKey;
-//    NSUserDefaults *defalut = [NSUserDefaults standardUserDefaults];
-//    //取出上个版本号
-//    NSString *lastVersion = [defalut valueForKey:versionKey];
-//    //获得当前版本号
-//    NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
-//    if ([lastVersion isEqualToString:currentVersion]) {
-//        self.window.rootViewController = tabBarVC;
-//    }else{
-//        AINewFeatureViewController *newFeature = [[AINewFeatureViewController alloc]init];
-//        self.window.rootViewController = newFeature;
-//        [defalut setValue:currentVersion forKey:versionKey];
-//        [defalut synchronize];
-//    }
-//    
-    AIOAuthViewController *oauthVC = [[AIOAuthViewController alloc]init];
-    self.window.rootViewController = oauthVC;
     [self.window makeKeyAndVisible];
+    AIAccountModel *account = [AIAccountTool account];
+    /*
+    
+    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:path];*/
+    if (account.access_token) {
+        [AIControllerTool chooseRootController];
+    }else{
+        AIOAuthViewController *oauthVC = [[AIOAuthViewController alloc]init];
+        self.window.rootViewController = oauthVC;
+    }
+
+ 
+    
     return YES;
 }
 

@@ -28,3 +28,9 @@
 #else
 #define AILog(...)
 #endif
+//应用信息
+#define AIAppKey @"568335106"
+#define AIAppSecrect @"a41299f2678ae4aee937d6bdc7ecc257"
+#define AIAppRediectURI @"http://www.baidu.com"
+
+

@@ -5,9 +5,29 @@
 //  Created by 艾泽鑫 on 15/10/7.
 //  Copyright © 2015年 aizexin. All rights reserved.
 //
+/*client_id	true	string	申请应用时分配的AppKey。
+ client_secret	true	string	申请应用时分配的AppSecret。
+ grant_type	true	string	请求的类型，填写authorization_code
+ 
+ grant_type为authorization_code时
+ 必选	类型及范围	说明
+ code	true	string	调用authorize获得的code值。
+ redirect_uri	true	string	回调地址，需需与注册应用里的回调地址一致。*/
+//返回结果
+//"access_token" = "2.00dUXnZF0Qvf9c1edfd95781084m7I";
+//"expires_in" = 157679999;
+//"remind_in" = 157679999;
+//uid = 5109642743;
 
 #import "AIOAuthViewController.h"
 #import "AIDefine.h"
+#import "AFHTTPRequestOperationManager.h"
+#import "MBProgressHUD+NJ.h"
+#import "AINewFeatureViewController.h"
+#import "AITabBarViewController.h"
+#import "AIControllerTool.h"
+#import "AIAccountTool.h"
+#import "AIAccountModel.h"
 @interface AIOAuthViewController ()<UIWebViewDelegate>
 
 @end
@@ -16,12 +36,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //AILog(@"---");
     // 1.创建UIWebView
     UIWebView *webView = [[UIWebView alloc] init];
     webView.frame = self.view.bounds;
     [self.view addSubview:webView];
     // 2.加载登录页面
-    NSURL *url = [NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=568335106&redirect_uri=http://www.baidu.com"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@",AIAppKey,AIAppRediectURI]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
     webView.delegate = self;
@@ -32,23 +53,55 @@
     //1.获得请求路径
     NSString *url = request.URL.absoluteString;
     //2.判断是不是回调地址
-    NSRange range = [url rangeOfString:@"http://www.baidu.com/?code="];
+    NSString *string = [NSString stringWithFormat:@"%@/?code=",AIAppRediectURI];
+    NSRange range = [url rangeOfString:string];
     if (range.location != NSNotFound) {//是回调地址
-//        获得code
-        NSString *code = [[url componentsSeparatedByString:@"http://www.baidu.com/?code="]lastObject];
-#warning  根据code获得accessToken
-//        [self access]
+        //        获得code
+        NSString *code = [[url componentsSeparatedByString:string]lastObject];
+        [self accessTokenWithCode:code];
+        return NO;
     }
     return YES;
 }
-- (void)webViewDidStartLoad:(UIWebView *)webView{
+/**
+ *  根据code获取accessToken
+ */
+-(void)accessTokenWithCode:(NSString*)code{
+    //1.
+    AFHTTPRequestOperationManager *manager =   [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+    //2.
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[@"client_id"] = AIAppKey;
+    dictM[@"client_secret"] = AIAppSecrect;
+    dictM[@"grant_type"] = @"authorization_code";
+    dictM[@"redirect_uri"] = AIAppRediectURI;
+    dictM[@"code"] = code;
+    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dictM success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        AILog(@"请求成功%@",responseObject);
+        //面向模型开发，把字典转换为模型
+        AIAccountModel *model = [AIAccountModel accountWithDict:responseObject];
+        //得到的accessToken写入沙盒
+        [AIAccountTool save:model];
+
+        //选着控制器
+        [AIControllerTool chooseRootController];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        AILog(@"请求失败%@",error.description);
+    }];
     
+    
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [MBProgressHUD showMessage:@"正在拼命的加载。。。"];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    
+    [MBProgressHUD hideHUD];
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error{
-    
+    [MBProgressHUD hideHUD];
 }
 
 @end

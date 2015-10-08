@@ -27,6 +27,10 @@
     [super viewDidLoad];
 
     AILog(@"%@",NSHomeDirectory());
+    [self setupNavBar];
+    
+}
+-(void)setupNavBar{
     //设置导航栏左右按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTagert:self action:@selector(onClickLeftItem:) NorImageName:@"navigationbar_friendsearch" andHeiImageName:@"navigationbar_friendsearch_highlighted"];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTagert:self action:nil NorImageName:@"navigationbar_pop" andHeiImageName:@"navigationbar_pop_highlighted"];
@@ -41,8 +45,8 @@
     [titleBtn addTarget:self action:@selector(onClickTitleItem:) forControlEvents:(UIControlEventTouchUpInside)];
     [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:(UIControlStateNormal)];
     self.navigationItem.titleView = titleBtn;
-    
 }
+
 #pragma mark -按钮点击事件
 /**
  *  点击做按钮
