@@ -22,14 +22,32 @@
 #import "AIStatusesModel.h"
 #import "UIImageView+AFNetworking.h"
 #import "AIUserModel.h"
+#import "AILoadMoreFooter.h"
+#import "MJRefresh.h"
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
 @property(nonatomic,strong)AIPopMenu *popMenu;
 @property(nonatomic,strong)NSMutableArray *statuses;
+@property(nonatomic,strong)AILoadMoreFooter *footer;
+
+/**
+ *  是否在刷新
+ */
+@property(nonatomic,assign,getter=isRefeshing)BOOL refeshing;
+/**
+ *  判断是否在加载
+ */
+@property(nonatomic,assign,getter=isLoading)BOOL loading;
 @end
 
 @implementation AiHomeViewController
 
+-(AILoadMoreFooter *)footer{
+    if (!_footer) {
+        _footer = [AILoadMoreFooter footer];
+    }
+    return _footer;
+}
 
 -(NSMutableArray *)statuses{
     if (!_statuses) {
@@ -41,11 +59,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     AILog(@"%@",NSHomeDirectory());
+    //设置导航栏内容
     [self setupNavBar];
-//    //加载数据
-//    [self loadNewData];
+
     //集成刷新控件
     [self setupRefresh];
+    //上啦加载
+    [self refreshAndLoad];
 }
 
 /**
@@ -56,6 +76,14 @@
     [self.tableView addSubview:refresh];
     //2.监听refresh
     [refresh addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:(UIControlEventValueChanged)];
+    //3.让刷新空间自动进入刷新状态
+    [refresh beginRefreshing];
+    //4.加载数据
+    [self refreshControlStateChange:refresh];
+    //5.添加上拉加载更多控件
+    
+    self.tableView.tableFooterView = self.footer;
+    self.footer.hidden = YES;
 }
 /**
  *  刷新方法
@@ -92,6 +120,56 @@
         [refresh endRefreshing];
     }];
 }
+#pragma mark -刷新加载
+-(void)refreshAndLoad{
+    /*//1.刷新
+    [self.tableView addHeaderWithCallback:^{
+        if (self.refeshing) {
+            return ;
+        }
+        self.refeshing = YES;
+        //加载数据
+        
+        _refeshing = NO;
+        //隐藏刷新驶入
+        [self.tableView headerEndRefreshing];
+    }];*/
+    //2.加载
+    [self.tableView addFooterWithCallback:^{
+        if (self.isLoading) {
+            return ;
+        }
+        self.loading = YES;
+        //重新加载数据
+        _loading = NO;
+        [self loadMoreData];
+        [self.tableView footerEndRefreshing];
+    }];
+}
+/**
+ *  加载更多数据
+ */
+-(void)loadMoreData{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
+    AIStatusesModel *lastStatuse = [self.statuses lastObject];
+    if (lastStatuse) {
+        
+        params[@"max_id"] =@([lastStatuse.idstr longLongValue] - 1);
+    }
+    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AILog(@"加载成功");
+        NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:responseObject];
+        [self.statuses addObjectsFromArray:oldStatus];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        AILog(@"加载失败%@",error.description);
+        
+    }];
+    [self.tableView reloadData];
+}
+
 /**
  *  提示用户刷新数量
  *
@@ -133,28 +211,7 @@
     }];
     
 }
-///**
-// *  加载数据
-// */
-//- (void)loadNewData{
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    //从沙盒中获得accessToken
-//    AIAccountModel *account = [AIAccountTool account];
-//    params[@"access_token"] = account.access_token;
-//    //get请求
-//
-//    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        AILog(@"请求成功");
-//        NSArray *statuses = responseObject[@"statuses"];
-//        self.statuses = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
-//        [self.tableView reloadData];
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        AILog(@"请求失败%@",error.description);
-//    }];
-//}
+
 /**
  *  设置navBar
  */
@@ -203,6 +260,12 @@
 -(void)popMenuDisMiss:(AIPopMenu *)popMenu{
     [_titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:(UIControlStateNormal)];
     [popMenu removeFromSuperview];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (self.statuses > 0) {
+        self.footer.hidden = NO;
+    }
 }
 
 #pragma mark - Table view data source
