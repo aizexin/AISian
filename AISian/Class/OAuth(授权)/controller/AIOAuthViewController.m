@@ -36,7 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //AILog(@"---");
     // 1.创建UIWebView
     UIWebView *webView = [[UIWebView alloc] init];
     webView.frame = self.view.bounds;
@@ -46,6 +45,7 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
     webView.delegate = self;
+    
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
