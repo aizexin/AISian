@@ -29,6 +29,10 @@
         self.backgroundColor = [UIColor whiteColor];
         //通过监听通知来实现是否隐藏label
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeText:) name:UITextViewTextDidChangeNotification object:self];
+        //设置始终有弹簧效果
+        self.alwaysBounceVertical = YES;
+        //隐藏滚动条
+        self.showsVerticalScrollIndicator = NO;
     }
     return self;
 }

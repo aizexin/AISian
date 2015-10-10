@@ -9,7 +9,9 @@
 #import "AIComposeViewController.h"
 #import "AIDefine.h"
 #import "AITextView.h"
-@interface AIComposeViewController ()
+#import "AIComposeToolbar.h"
+
+@interface AIComposeViewController ()<AIComposeToolbarDelegate,UIScrollViewDelegate>
 @property(nonatomic,strong)AITextView *textView;
 @end
 
@@ -17,14 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //设置导航栏
     [self setupNavBar];
+    //设置textView
+    [self setupTextView];
+    
+}
+-(void)setupTextView{
     AITextView *textView = [[AITextView alloc]initWithFrame:self.view.bounds];
+    textView.delegate = self;
     self.textView = textView;
     textView.placeholder = @"分享新鲜事";
     textView.font = [UIFont systemFontOfSize:20];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:textView];
-    
+    //添加自定义toolbar
+    AIComposeToolbar *toolBar = [[AIComposeToolbar alloc]init];
+    toolBar.delegate = self;
+    toolBar.width = self.view.width;
+    toolBar.height = 44;
+    textView.inputAccessoryView = toolBar;
 }
 /**
  *  设置导航栏
@@ -45,6 +59,32 @@
 -(void)onClickSend:(UIBarButtonItem*)send{
    
 }
-
+#pragma mark AIComposeToolbarDelegate
+-(void)composeToolbar:(AIComposeToolbar *)toolbar didClick:(AIComposeToolBarTagType)type{
+    switch (type) {
+        case AIComposeToolBarTagTypeCamera:{
+            AILog(@"点击相机");
+        }
+            
+            break;
+        case AIComposeToolBarTagTypePicture:{
+            AILog(@"点击相册");
+        }
+            
+            break;
+        case AIComposeToolBarTagTypeEmotion:{
+            AILog(@"点击表情");
+        }
+            
+            break;
+            
+        default:
+            break;
+    }
+}
+#pragma mark -UIScrollViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
+}
 
 @end
