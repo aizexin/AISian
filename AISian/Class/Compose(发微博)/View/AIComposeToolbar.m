@@ -46,7 +46,7 @@
 -(void)onClickBtn:(UIButton*)button{
     
     if ([self.delegate respondsToSelector:@selector(composeToolbar:didClick:)]) {
-        [self.delegate composeToolbar:self didClick:button.tag];
+        [self.delegate composeToolbar:self didClick:(AIComposeToolBarTagType)button.tag];
     }
 }
 
