@@ -7,16 +7,30 @@
 //
 
 #import "AIComposeViewController.h"
-
+#import "AIDefine.h"
+#import "AITextView.h"
 @interface AIComposeViewController ()
-
+@property(nonatomic,strong)AITextView *textView;
 @end
 
 @implementation AIComposeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor yellowColor]];
+    [self setupNavBar];
+    AITextView *textView = [[AITextView alloc]initWithFrame:self.view.bounds];
+    self.textView = textView;
+    textView.placeholder = @"分享新鲜事";
+    textView.font = [UIFont systemFontOfSize:20];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:textView];
+    
+}
+/**
+ *  设置导航栏
+ */
+-(void)setupNavBar
+{
     //设置取消
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"取消" style:(UIBarButtonItemStylePlain) target:self action:@selector(onClickCancel:)];
     //设置发送
@@ -25,10 +39,11 @@
 }
 #pragma mark -按钮点击事件
 -(void)onClickCancel:(UIBarButtonItem*)cancel{
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)onClickSend:(UIBarButtonItem*)send{
-    
+   
 }
 
 
