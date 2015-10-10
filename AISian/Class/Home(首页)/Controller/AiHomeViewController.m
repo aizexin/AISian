@@ -5,6 +5,7 @@
 //  Created by qianfeng on 15/9/26.
 //  Copyright (c) 2015年 aizexin. All rights reserved.
 //
+#warning 还没判断过期和网络状态
 
 #import "AiHomeViewController.h"
 #import "AITemp1ViewController.h"
@@ -161,9 +162,9 @@
         params[@"max_id"] =@([lastStatuse.idstr longLongValue] - 1);
     }
     [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *statuses = responseObject[@"statuses"];
         AILog(@"加载成功");
-        NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:responseObject];
-        AILog(@"-----oldStatus.count%ld",oldStatus.count);
+        NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
         [self.statuses addObjectsFromArray:oldStatus];
         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
