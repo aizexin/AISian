@@ -111,6 +111,7 @@
     switch (type) {
         case AIComposeToolBarTagTypeCamera:{
             AILog(@"点击相机");
+            if (![UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]) return;
             self.pickerVC = [[UIImagePickerController alloc]init];
             _pickerVC.delegate = self;
             [self.pickerVC setSourceType:(UIImagePickerControllerSourceTypeCamera)];
@@ -121,6 +122,7 @@
             break;
         case AIComposeToolBarTagTypePicture:{
             AILog(@"点击相册");
+            if (![UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypePhotoLibrary)]) return;
             self.pickerVC = [[UIImagePickerController alloc]init];
             _pickerVC.delegate = self;
             [self.pickerVC setSourceType:(UIImagePickerControllerSourceTypePhotoLibrary)];
