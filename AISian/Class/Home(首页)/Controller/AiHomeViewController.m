@@ -82,8 +82,8 @@
     [self refreshControlStateChange:refresh];
     //5.添加上拉加载更多控件
     
-    self.tableView.tableFooterView = self.footer;
-    self.footer.hidden = YES;
+//    self.tableView.tableFooterView = self.footer;
+//    self.footer.hidden = YES;
 }
 /**
  *  刷新方法
@@ -155,14 +155,17 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
     AIStatusesModel *lastStatuse = [self.statuses lastObject];
+    AIAccountModel *account = [AIAccountTool account];
+    params[@"access_token"] = account.access_token;
     if (lastStatuse) {
-        
         params[@"max_id"] =@([lastStatuse.idstr longLongValue] - 1);
     }
     [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         AILog(@"加载成功");
         NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:responseObject];
+        AILog(@"-----oldStatus.count%ld",oldStatus.count);
         [self.statuses addObjectsFromArray:oldStatus];
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         AILog(@"加载失败%@",error.description);
         
