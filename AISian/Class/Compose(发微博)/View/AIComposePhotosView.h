@@ -16,4 +16,8 @@
  *  @param image 添加的图片
  */
 -(void)addImage:(UIImage*)image;
+/**
+ *  里面的图片
+ */
+@property(nonatomic,strong)NSMutableArray *photos;
 @end

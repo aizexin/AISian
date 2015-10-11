@@ -31,6 +31,8 @@
     imageV.image = image;
     [imageV setContentMode:(UIViewContentModeScaleAspectFit)];
     [self addSubview:imageV];
+    //添加数组中
+    [self.photos addObject:image];
 }
 
 -(void)layoutSubviews{
@@ -46,6 +48,13 @@
         imageV.x = col * (imageW + Margin) + Margin;
         imageV.y = row * (imageH + Margin);
     }
+}
+
+-(NSMutableArray *)photos{
+    if (!_photos) {
+        _photos = [NSMutableArray array];
+    }
+    return _photos;
 }
 
 @end

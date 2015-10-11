@@ -23,7 +23,7 @@
     
 //  判断是否过期
     NSDate *now = [NSDate date];
-    if ([now compare:account.expires_in_time] != NSOrderedAscending) {
+    if ([now compare:account.expires_in_time] == NSOrderedAscending) {
         account = nil;
     }
     return account;
