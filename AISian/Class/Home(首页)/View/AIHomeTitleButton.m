@@ -47,4 +47,12 @@
     CGFloat X = self.width-self.height;
     return CGRectMake(X, Y, W, H);
 }
+
+-(void)setTitle:(NSString *)title forState:(UIControlState)state{
+    [super setTitle:title forState:state];
+    CGSize maxSize = CGSizeMake(MAXFLOAT, self.height);
+    NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
+    dictM[NSFontAttributeName] = self.titleLabel.font;
+    self.width = [title boundingRectWithSize:maxSize options:(NSStringDrawingUsesLineFragmentOrigin) attributes:dictM context:nil].size.width + 10 + self.height;
+}
 @end

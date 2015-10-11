@@ -67,6 +67,35 @@
     [self setupRefresh];
     //上啦加载
     [self refreshAndLoad];
+    //请求用户信息
+    [self setupUserInfo];
+}
+/**
+ *  加载用户信息
+ */
+-(void)setupUserInfo{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    //2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [AIAccountTool account].access_token;
+    params[@"uid"] = [AIAccountTool account].uid;
+    
+    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        AILog(@"请求成功");
+        //装换为user模型
+        AIUserModel *userModel = [AIUserModel objectWithKeyValues:responseObject];
+        //设置昵称
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            [self.titleBtn setTitle:userModel.name forState:(UIControlStateNormal)];
+        });
+        AIAccountModel *account = [AIAccountTool account];
+        account.screen_name = userModel.name;
+        [AIAccountTool save:account];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        AILog(@"请求失败%@",error.description);
+    }];
+
 }
 
 /**
@@ -223,17 +252,27 @@
     //设置导航栏左右按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTagert:self action:@selector(onClickLeftItem:) NorImageName:@"navigationbar_friendsearch" andHeiImageName:@"navigationbar_friendsearch_highlighted"];
     self.navigationItem.rightBarButtonItem = [UIBarButtonItem itemWithTagert:self action:nil NorImageName:@"navigationbar_pop" andHeiImageName:@"navigationbar_pop_highlighted"];
-    
+ 
     //
+    
     AIHomeTitleButton *titleBtn = [[AIHomeTitleButton alloc]init];
     _titleBtn = titleBtn;
-    titleBtn.size = CGSizeMake(100, 35);
-    [titleBtn setTitle:@"首页" forState:(UIControlStateNormal)];
+    titleBtn.height = 35;
+    //设置标题昵称
+    //1获得用户信息
+    AIAccountModel *account = [AIAccountTool account];
+    if (account.screen_name) {//看沙盒中有没有上次数据
+        [titleBtn setTitle:account.screen_name forState:(UIControlStateNormal)];
+    }else{
+        [titleBtn setTitle:@"首页" forState:(UIControlStateNormal)];
+    }
+    
     UIImage *higImage = [UIImage resizedImage:@"navigationbar_filter_background_highlighted"];
     [titleBtn setBackgroundImage:higImage forState:(UIControlStateHighlighted)];
     [titleBtn addTarget:self action:@selector(onClickTitleItem:) forControlEvents:(UIControlEventTouchUpInside)];
     [titleBtn setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:(UIControlStateNormal)];
     self.navigationItem.titleView = titleBtn;
+    
 }
 
 #pragma mark -按钮点击事件

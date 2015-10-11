@@ -25,6 +25,7 @@
     [coder encodeObject:self.access_token forKey:@"access_token"];
     [coder encodeObject:self.expires_in forKey:@"expires_in"];
     [coder encodeObject:self.uid forKey:@"uid"];
+    [coder encodeObject:self.screen_name forKey:@"screen_name"];
     
 }
 //解归档的时候调用
@@ -32,7 +33,8 @@
     if (self = [super init]) {
         self.access_token = [aDecoder decodeObjectForKey:@"access_token"];
         self.expires_in = [aDecoder decodeObjectForKey:@"expires_in"];
-        self.uid = [aDecoder decodeObjectForKey:@"uid"];        
+        self.uid = [aDecoder decodeObjectForKey:@"uid"];
+        self.screen_name = [aDecoder decodeObjectForKey:@"screen_name"];
     }
     return self;
 }

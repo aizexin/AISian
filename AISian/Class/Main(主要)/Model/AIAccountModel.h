@@ -25,5 +25,10 @@
  *  过期时间
  */
 @property(nonatomic,strong)NSDate *expires_in_time;
+/**
+ * string	用户昵称
+ */
+@property(nonatomic ,copy)NSString *screen_name;
+
 +(instancetype)accountWithDict:(NSDictionary*)dict;
 @end

@@ -10,8 +10,12 @@
 
 @interface AIUserModel : NSObject
 @property(nonatomic ,copy)NSString *idstr;
-@property(nonatomic ,assign)NSNumber *mbrank;
-@property(nonatomic ,assign)NSNumber *mbtype;
+/**
+ *  向好友显示的名称
+ */
 @property(nonatomic ,copy)NSString *name;
+/**
+ *  头像缩略图
+ */
 @property(nonatomic ,copy)NSString *profile_image_url;
 @end
