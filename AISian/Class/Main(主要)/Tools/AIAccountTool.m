@@ -7,6 +7,7 @@
 //
 
 #import "AIAccountTool.h"
+#import "AIAccountModel.h"
 #define PATH [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)lastObject]stringByAppendingPathComponent:@"account"]
 
 @implementation AIAccountTool
@@ -19,8 +20,12 @@
 +(AIAccountModel *)account{
     //接档
     AIAccountModel *account = [NSKeyedUnarchiver unarchiveObjectWithFile:PATH];
-#warning  判断是否过期
-//    NSDate *now = [NSDate date];
+    
+//  判断是否过期
+    NSDate *now = [NSDate date];
+    if ([now compare:account.expires_in_time] != NSOrderedAscending) {
+        account = nil;
+    }
     return account;
 }
 

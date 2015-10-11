@@ -14,6 +14,9 @@
     model.access_token = dict[@"access_token"];
     model.expires_in = dict[@"expires_in"];
     model.uid = dict[@"uid"];
+    //计算过期时间
+    NSDate *now = [NSDate date];
+    model.expires_in_time = [now dateByAddingTimeInterval:([model.expires_in doubleValue])];
     return model;
 }
 //归档时调用

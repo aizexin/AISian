@@ -36,6 +36,10 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardHidden:) name:UIKeyboardWillHideNotification object:nil];
 }
 
+-(void)dealloc{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
+
 -(void)setupToolbar{
     //添加自定义toolbar
     AIComposeToolbar *toolBar = [[AIComposeToolbar alloc]init];

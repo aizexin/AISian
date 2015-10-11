@@ -22,8 +22,8 @@
  */
 @property(nonatomic ,copy)NSString *uid;
 /**
- *  判断是否过期
+ *  过期时间
  */
-@property(nonatomic, assign,getter=isOverdue)BOOL overdue;
+@property(nonatomic,strong)NSDate *expires_in_time;
 +(instancetype)accountWithDict:(NSDictionary*)dict;
 @end
