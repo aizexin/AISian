@@ -148,10 +148,12 @@
     params[@"access_token"] = account.access_token;
     params[@"status"] = self.textView.text;
     [manager POST:Compose_Path_Image parameters:params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        UIImage *image = [self.photosView.photos firstObject];
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
-        [formData appendPartWithFileData:imageData name:@"pic" fileName:@"status.jpg" mimeType:@"image/jpeg"];
         
+        UIImage *image = [self.photosView.photos firstObject];
+        
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
+        
+        [formData appendPartWithFileData:imageData name:@"pic" fileName:@"status.jpeg" mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         AILog(@"---发送请求成功");
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

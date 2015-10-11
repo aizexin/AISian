@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AA1F0380D51256D256FCAA12814C021EAFC9CFFC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B167BA6CF24275BDCB5F16F1895C44E9C4DDAE36" : 0,
+    "AA1F0380D51256D256FCAA12814C021EAFC9CFFC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5D16BFF2-F52E-42A1-BA95-E9B73D8790B9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B167BA6CF24275BDCB5F16F1895C44E9C4DDAE36" : "",
+    "AA1F0380D51256D256FCAA12814C021EAFC9CFFC" : "AISian\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AISian",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "AISian.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aizexin\/AISian.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AA1F0380D51256D256FCAA12814C021EAFC9CFFC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aizexin\/AIposition.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B167BA6CF24275BDCB5F16F1895C44E9C4DDAE36"
+    }
+  ]
+}
