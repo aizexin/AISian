@@ -21,13 +21,13 @@
 
 #import "AIOAuthViewController.h"
 #import "AIDefine.h"
-#import "AFHTTPRequestOperationManager.h"
 #import "MBProgressHUD+NJ.h"
 #import "AINewFeatureViewController.h"
 #import "AITabBarViewController.h"
 #import "AIControllerTool.h"
 #import "AIAccountTool.h"
 #import "AIAccountModel.h"
+#import "AIHttpTool.h"
 @interface AIOAuthViewController ()<UIWebViewDelegate>
 
 @end
@@ -49,7 +49,7 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    AILog(@"%@",request.URL.absoluteString);
+//    AILog(@"%@",request.URL.absoluteString);
     //1.获得请求路径
     NSString *url = request.URL.absoluteString;
     //2.判断是不是回调地址
@@ -67,9 +67,7 @@
  *  根据code获取accessToken
  */
 -(void)accessTokenWithCode:(NSString*)code{
-    //1.
-    AFHTTPRequestOperationManager *manager =   [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+  
     //2.
     NSMutableDictionary *dictM = [NSMutableDictionary dictionary];
     dictM[@"client_id"] = AIAppKey;
@@ -77,21 +75,16 @@
     dictM[@"grant_type"] = @"authorization_code";
     dictM[@"redirect_uri"] = AIAppRediectURI;
     dictM[@"code"] = code;
-    [manager POST:@"https://api.weibo.com/oauth2/access_token" parameters:dictM success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        AILog(@"请求成功%@",responseObject);
+    [AIHttpTool post:@"https://api.weibo.com/oauth2/access_token" params:dictM success:^(id responseObject) {
         //面向模型开发，把字典转换为模型
         AIAccountModel *model = [AIAccountModel accountWithDict:responseObject];
         //得到的accessToken写入沙盒
         [AIAccountTool save:model];
-
         //选着控制器
         [AIControllerTool chooseRootController];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         AILog(@"请求失败%@",error.description);
     }];
-    
     
 }
 - (void)webViewDidStartLoad:(UIWebView *)webView{

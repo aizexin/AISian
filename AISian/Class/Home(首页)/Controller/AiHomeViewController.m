@@ -5,7 +5,7 @@
 //  Created by qianfeng on 15/9/26.
 //  Copyright (c) 2015年 aizexin. All rights reserved.
 //
-#warning 还没判断过期和网络状态
+#warning 还没判断网络状态
 
 #import "AiHomeViewController.h"
 #import "AITemp1ViewController.h"
@@ -16,7 +16,6 @@
 #import "AIDefine.h"
 #import "UIView+Extension.h"
 #import "AIPopMenu.h"
-#import "AFHTTPRequestOperationManager.h"
 #import "AIAccountTool.h"
 #import "AIAccountModel.h"
 #import "MJExtension.h"
@@ -25,6 +24,7 @@
 #import "AIUserModel.h"
 #import "AILoadMoreFooter.h"
 #import "MJRefresh.h"
+#import "AIHttpTool.h"
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
 @property(nonatomic,strong)AIPopMenu *popMenu;
@@ -59,7 +59,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    AILog(@"%@",NSHomeDirectory());
+//    AILog(@"%@",NSHomeDirectory());
     //设置导航栏内容
     [self setupNavBar];
 
@@ -74,28 +74,26 @@
  *  加载用户信息
  */
 -(void)setupUserInfo{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
+
     //2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [AIAccountTool account].access_token;
     params[@"uid"] = [AIAccountTool account].uid;
     
-    [manager GET:@"https://api.weibo.com/2/users/show.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [AIHttpTool get:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
         AILog(@"请求成功");
         //装换为user模型
         AIUserModel *userModel = [AIUserModel objectWithKeyValues:responseObject];
         //设置昵称
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            [self.titleBtn setTitle:userModel.name forState:(UIControlStateNormal)];
-        });
+        [self.titleBtn setTitle:userModel.name forState:(UIControlStateNormal)];
         AIAccountModel *account = [AIAccountTool account];
         account.screen_name = userModel.name;
         [AIAccountTool save:account];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+    } failure:^(NSError *error) {
         AILog(@"请求失败%@",error.description);
     }];
-
 }
 
 /**
@@ -119,8 +117,8 @@
  *  刷新方法
  */
 -(void)refreshControlStateChange:(UIRefreshControl*)refresh{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+   
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     //从沙盒中获得accessToken
     //封装参数
@@ -131,7 +129,7 @@
         params[@"since_id"] = statuse.idstr;
     }
     //get请求
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [AIHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
         AILog(@"请求成功");
         NSArray *statuses = responseObject[@"statuses"];
         AILog(@"%ld",statuses.count);
@@ -144,11 +142,12 @@
         [self showNewStatuesCount:statuses.count];
         //停止刷新
         [refresh endRefreshing];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         AILog(@"请求失败%@",error.description);
         //停止刷新
         [refresh endRefreshing];
     }];
+
 }
 #pragma mark -刷新加载
 -(void)refreshAndLoad{
@@ -180,8 +179,8 @@
  *  加载更多数据
  */
 -(void)loadMoreData{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
+  
+//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
     AIStatusesModel *lastStatuse = [self.statuses lastObject];
@@ -190,16 +189,16 @@
     if (lastStatuse) {
         params[@"max_id"] =@([lastStatuse.idstr longLongValue] - 1);
     }
-    [manager GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [AIHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
         NSArray *statuses = responseObject[@"statuses"];
         AILog(@"加载成功");
         NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
         [self.statuses addObjectsFromArray:oldStatus];
         [self.tableView reloadData];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         AILog(@"加载失败%@",error.description);
-        
     }];
+
     [self.tableView reloadData];
 }
 

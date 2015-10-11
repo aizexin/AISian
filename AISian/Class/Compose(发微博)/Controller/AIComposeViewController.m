@@ -14,6 +14,7 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AIAccountTool.h"
 #import "AIAccountModel.h"
+#import "AIHttpTool.h"
 #define Compose_Path @"https://api.weibo.com/2/statuses/update.json"//没有图片发送微博的接口
 #define Compose_Path_Image @"https://upload.api.weibo.com/2/statuses/upload.json"//发送有图片的微（有且只有一张）
 @interface AIComposeViewController ()<AIComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -140,6 +141,7 @@
  *  发送有图片的微博
  */
 -(void)composeStatusWithImage{
+#warning 准备封装有图片的http上传文件函数
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     AIAccountModel *account = [AIAccountTool account];
@@ -160,14 +162,14 @@
  *  发送没有图片的微博
  */
 -(void)composeStatusWIthOutImage{
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     AIAccountModel *account = [AIAccountTool account];
     params[@"access_token"] = account.access_token;
     params[@"status"] = self.textView.text;
-    [manager POST:Compose_Path parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [AIHttpTool post:Compose_Path params:params success:^(id responseObject) {
         AILog(@"---发送请求成功");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSError *error) {
         AILog(@"---发送请求失败,%@",error.description);
     }];
 }

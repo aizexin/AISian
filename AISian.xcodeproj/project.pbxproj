@@ -69,6 +69,7 @@
 		BC6189341BC92341002E0B93 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61892B1BC92341002E0B93 /* MJRefreshHeaderView.m */; };
 		BC6189351BC92341002E0B93 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61892D1BC92341002E0B93 /* UIScrollView+Extension.m */; };
 		BC6189361BC92341002E0B93 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = BC61892F1BC92341002E0B93 /* UIScrollView+MJRefresh.m */; };
+		BC6A8EFF1BCA8D81001CE69F /* AIHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A8EFE1BCA8D81001CE69F /* AIHttpTool.m */; };
 		BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC94811C1BB90A93004CA8DA /* UIView+Extension.m */; };
 		BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9985021BBA949200CA858C /* AIHomeTitleButton.m */; };
 		BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = BC9985051BBA94BD00CA858C /* AIPopMenu.m */; };
@@ -218,6 +219,8 @@
 		BC61892D1BC92341002E0B93 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		BC61892E1BC92341002E0B93 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
 		BC61892F1BC92341002E0B93 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
+		BC6A8EFD1BCA8D81001CE69F /* AIHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHttpTool.h; sourceTree = "<group>"; };
+		BC6A8EFE1BCA8D81001CE69F /* AIHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIHttpTool.m; sourceTree = "<group>"; };
 		BC94811B1BB90A93004CA8DA /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
 		BC94811C1BB90A93004CA8DA /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		BC9985011BBA949200CA858C /* AIHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeTitleButton.h; sourceTree = "<group>"; };
@@ -456,6 +459,8 @@
 				BC01DB7C1BC62AD7008F6438 /* AIControllerTool.m */,
 				BC01DB7E1BC63305008F6438 /* AIAccountTool.h */,
 				BC01DB7F1BC63305008F6438 /* AIAccountTool.m */,
+				BC6A8EFD1BCA8D81001CE69F /* AIHttpTool.h */,
+				BC6A8EFE1BCA8D81001CE69F /* AIHttpTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -990,6 +995,7 @@
 				BC01DBFD1BC65B08008F6438 /* MJFoundation.m in Sources */,
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BC01DBFC1BC65B08008F6438 /* MJExtensionConst.m in Sources */,
+				BC6A8EFF1BCA8D81001CE69F /* AIHttpTool.m in Sources */,
 				BC01DB791BC60121008F6438 /* MBProgressHUD.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
 				BC01DB861BC649D3008F6438 /* Foundation+Log.m in Sources */,
