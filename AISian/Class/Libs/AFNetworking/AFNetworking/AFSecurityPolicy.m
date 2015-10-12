@@ -22,12 +22,13 @@
 #import "AFSecurityPolicy.h"
 
 #import <AssertMacros.h>
-
+//#import <Security/Security.h>
+//#import <Security/Security.h>
 #if !TARGET_OS_IOS && !TARGET_OS_WATCH
 static NSData * AFSecKeyGetData(SecKeyRef key) {
     CFDataRef data = NULL;
 
-    __Require_noErr_Quiet(SecItemExport(key, kSecFormatUnknown, kSecItemPemArmour, NULL, &data), _out);
+//    __Require_noErr_Quiet(SecItemExport(key, kSecFormatUnknown, kSecItemPemArmour, NULL, &data), _out);
 
     return (__bridge_transfer NSData *)data;
 

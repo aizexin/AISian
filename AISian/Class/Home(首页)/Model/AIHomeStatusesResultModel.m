@@ -11,7 +11,8 @@
 #import "AIStatusesModel.h"
 @implementation AIHomeStatusesResultModel
 
--(NSDictionary*)objectClassInArray{
-    return @{@"statues":[AIStatusesModel class]};
+- (NSDictionary *)objectClassInArray
+{
+    return @{@"statuses" : [AIStatusesModel class]};
 }
 @end

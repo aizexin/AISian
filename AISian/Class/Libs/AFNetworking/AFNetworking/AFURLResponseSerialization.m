@@ -221,7 +221,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
         return nil;
     }
 
-    self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/plain", nil];
+    self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
 
     return self;
 }
@@ -530,7 +530,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
 
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
 #import <CoreGraphics/CoreGraphics.h>
-
+#import <UIKit/UIKit.h>
 @interface UIImage (AFNetworkingSafeImageLoading)
 + (UIImage *)af_safeImageWithData:(NSData *)data;
 @end

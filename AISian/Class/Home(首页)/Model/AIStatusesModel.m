@@ -7,7 +7,12 @@
 //
 
 #import "AIStatusesModel.h"
-
+#import "MJExtension.h"
+#import "AIPhoto.h"
 @implementation AIStatusesModel
 
+- (NSDictionary *)objectClassInArray
+{
+    return @{@"pic_urls" : [AIPhoto class]};
+}
 @end

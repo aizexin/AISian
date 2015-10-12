@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface AIHomeStatusesResultModel : NSObject
-/** 微博数组（装着HMStatus模型） */
+/** 微博数组（装着AIStatus模型） */
 @property (nonatomic, strong) NSArray *statuses;
 
 /** 近期的微博总数 */

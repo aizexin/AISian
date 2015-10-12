@@ -24,7 +24,6 @@
 #import "AIUserModel.h"
 #import "AILoadMoreFooter.h"
 #import "MJRefresh.h"
-#import "AIHttpTool.h"
 #import "AIStatusesTool.h"
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
@@ -75,40 +74,7 @@
  *  加载用户信息
  */
 -(void)setupUserInfo{
-//    [AIStatusesTool homeStatusesWithParams:(参数模型) success:(返回一个结果模型) failure:(void (^)(NSError *error))];
-//    AIHomeStatusesParamModel *paramModel = [[AIHomeStatusesParamModel alloc]init];
-//    paramModel.access_token = [AIAccountTool account].access_token;
-//    paramModel.uid = [AIAccountTool account].uid;
-//    [AIStatusesTool homeStatusesWithParams:paramModel success:^(AIHomeStatusesResultModel *resultModel) {
-////        AIUserModel *userModel = [AIUserModel objectWithKeyValues:responseObject];
-//        //设置昵称
-//        [self.titleBtn setTitle:resultModel.name forState:(UIControlStateNormal)];
-//        AIAccountModel *account = [AIAccountTool account];
-//        account.screen_name = resultModel.name;
-//        [AIAccountTool save:account];
-//
-//    } failure:^(NSError *error) {
-//        
-//    }];
-//
-//    //2.封装请求参数
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    params[@"access_token"] = [AIAccountTool account].access_token;
-//    params[@"uid"] = [AIAccountTool account].uid;
-//    
-//    [AIHttpTool get:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
-//        AILog(@"请求成功");
-//        //装换为user模型
-//        AIUserModel *userModel = [AIUserModel objectWithKeyValues:responseObject];
-//        //设置昵称
-//        [self.titleBtn setTitle:userModel.name forState:(UIControlStateNormal)];
-//        AIAccountModel *account = [AIAccountTool account];
-//        account.screen_name = userModel.name;
-//        [AIAccountTool save:account];
-//
-//    } failure:^(NSError *error) {
-//        AILog(@"请求失败%@",error.description);
-//    }];
+
 }
 
 /**
@@ -124,9 +90,7 @@
     //4.加载数据
     [self refreshControlStateChange:refresh];
     //5.添加上拉加载更多控件
-    
-//    self.tableView.tableFooterView = self.footer;
-//    self.footer.hidden = YES;
+
 }
 /**
  *  刷新方法
@@ -140,12 +104,11 @@
         paramModel.since_id = @([statuse.idstr longLongValue]);
     }
     [AIStatusesTool homeStatusesWithParams:paramModel success:^(AIHomeStatusesResultModel *resultModel) {
-#warning 这里有错
+
         AILog(@"请求成功");
         NSArray *statuses = resultModel.statuses;
-        AILog(@"%@",statuses);
-//        AILog(@"%ld",statuses.count);
-//        statuses = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
+//        AILog(@"%@",[statuses[0] class] );
+
         //讲数据查到最前面
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
         [self.statuses insertObjects:statuses atIndexes:indexSet];
@@ -159,35 +122,7 @@
         //停止刷新
         [refresh endRefreshing];
     }];
-    //------
-//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-//    //从沙盒中获得accessToken
-//    //封装参数
-//    AIAccountModel *account = [AIAccountTool account];
-//    params[@"access_token"] = account.access_token;
-//    AIStatusesModel *statuse = [self.statuses firstObject];
-//    if (statuse) {
-//        params[@"since_id"] = statuse.idstr;
-//    }
-//    //get请求
-//    [AIHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
-//        AILog(@"请求成功");
-//        NSArray *statuses = responseObject[@"statuses"];
-//        AILog(@"%ld",statuses.count);
-//        statuses = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
-//        //讲数据查到最前面
-//        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
-//        [self.statuses insertObjects:statuses atIndexes:indexSet];
-//        [self.tableView reloadData];
-//        //提示用户刷新数量
-//        [self showNewStatuesCount:statuses.count];
-//        //停止刷新
-//        [refresh endRefreshing];
-//    } failure:^(NSError *error) {
-//        AILog(@"请求失败%@",error.description);
-//        //停止刷新
-//        [refresh endRefreshing];
-//    }];
+
 
 }
 #pragma mark -刷新加载
@@ -221,17 +156,16 @@
  */
 -(void)loadMoreData{
   
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"application/json"];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
     // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
     AIStatusesModel *lastStatuse = [self.statuses lastObject];
-    AIAccountModel *account = [AIAccountTool account];
-    params[@"access_token"] = account.access_token;
+    
+    AIHomeStatusesParamModel *paramModel = [[AIHomeStatusesParamModel alloc]init];
+    paramModel.access_token = [AIAccountTool account].access_token;
     if (lastStatuse) {
-        params[@"max_id"] =@([lastStatuse.idstr longLongValue] - 1);
+        paramModel.max_id = @([lastStatuse.idstr longLongValue] - 1);
     }
-    [AIHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObject) {
-        NSArray *statuses = responseObject[@"statuses"];
+    [AIStatusesTool homeStatusesWithParams:paramModel success:^(AIHomeStatusesResultModel *resultModel) {
+        NSArray *statuses = resultModel.statuses;
         AILog(@"加载成功");
         NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
         [self.statuses addObjectsFromArray:oldStatus];
@@ -239,7 +173,6 @@
     } failure:^(NSError *error) {
         AILog(@"加载失败%@",error.description);
     }];
-
     [self.tableView reloadData];
 }
 
