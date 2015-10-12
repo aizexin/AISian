@@ -10,6 +10,7 @@
 #define AIweichat_AIDefine_h
 
 #import "UIView+Extension.h"
+#import "UIImage+Extension.h"
 #define Mainsize ([[UIScreen mainScreen]bounds].size)
 // 颜色
 #define AIColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]

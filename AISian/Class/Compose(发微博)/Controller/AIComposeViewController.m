@@ -14,7 +14,8 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "AIAccountTool.h"
 #import "AIAccountModel.h"
-#import "AIHttpTool.h"
+#import "AIStatusesTool.h"
+//#import "AIHttpTool.h"
 #define Compose_Path @"https://api.weibo.com/2/statuses/update.json"//没有图片发送微博的接口
 #define Compose_Path_Image @"https://upload.api.weibo.com/2/statuses/upload.json"//发送有图片的微（有且只有一张）
 @interface AIComposeViewController ()<AIComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate>
@@ -165,11 +166,19 @@
  */
 -(void)composeStatusWIthOutImage{
 
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    AIAccountModel *account = [AIAccountTool account];
-    params[@"access_token"] = account.access_token;
-    params[@"status"] = self.textView.text;
-    [AIHttpTool post:Compose_Path params:params success:^(id responseObject) {
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    AIAccountModel *account = [AIAccountTool account];
+//    params[@"access_token"] = account.access_token;
+//    params[@"status"] = self.textView.text;
+//    [AIHttpTool post:Compose_Path params:params success:^(id responseObject) {
+//        AILog(@"---发送请求成功");
+//    } failure:^(NSError *error) {
+//        AILog(@"---发送请求失败,%@",error.description);
+//    }];
+    AIComposeParamModel *param = [[AIComposeParamModel alloc]init];
+    param.access_token = [AIAccountTool account].access_token;
+    param.status = self.textView.text;
+    [AIStatusesTool composeStatusesWithParams:param success:^(AIComposeResultModel *resultModel) {
         AILog(@"---发送请求成功");
     } failure:^(NSError *error) {
         AILog(@"---发送请求失败,%@",error.description);

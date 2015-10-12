@@ -28,6 +28,38 @@
         }
     }];
 }
+
++(void)userInfoStatusesWithParams:(AIUserInfoParamModel *)paramModel success:(void (^)(AIUserInfoResultModel * resultModel))success failure:(void (^)(NSError *error))failure{
+    //模型转换为字典
+    NSDictionary *params = paramModel.keyValues;
+    NSLog(@"%@",params);
+    [AIHttpTool get:@"https://api.weibo.com/2/users/show.json" params:params success:^(id responseObject) {
+        if (success) {
+            AIUserInfoResultModel *model = [AIUserInfoResultModel objectWithKeyValues:responseObject];
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
+
++(void)composeStatusesWithParams:(AIComposeParamModel *)paramModel success:(void (^)(AIComposeResultModel * resultModel))success failure:(void (^)(NSError *error))failure{
+    //模型转换为字典
+    NSDictionary *params = paramModel.keyValues;
+    NSLog(@"%@",params);
+    [AIHttpTool post:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObject) {
+        if (success) {
+            AIComposeResultModel *model = [AIComposeResultModel objectWithKeyValues:responseObject];
+            success(model);
+        }
+    } failure:^(NSError *error) {
+        if (failure) {
+            failure(error);
+        }
+    }];
+}
 //-(void)ss{
 //    void(^block)(int a,int ) = ^(int a,int b ){
 //        

@@ -12,9 +12,7 @@
 #import "UIBarButtonItem+Extension.h"
 #import "AITemp1ViewController.h"
 #import "AIHomeTitleButton.h"
-#import "UIImage+Extension.h"
 #import "AIDefine.h"
-#import "UIView+Extension.h"
 #import "AIPopMenu.h"
 #import "AIAccountTool.h"
 #import "AIAccountModel.h"
@@ -25,6 +23,7 @@
 #import "AILoadMoreFooter.h"
 #import "MJRefresh.h"
 #import "AIStatusesTool.h"
+
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
 @property(nonatomic,strong)AIPopMenu *popMenu;
@@ -74,7 +73,21 @@
  *  加载用户信息
  */
 -(void)setupUserInfo{
-
+    AIUserInfoParamModel *param = [[AIUserInfoParamModel alloc]init];
+    param.access_token = [AIAccountTool account].access_token;
+    param.uid = [AIAccountTool account].uid;
+    [AIStatusesTool userInfoStatusesWithParams:param success:^(AIUserInfoResultModel *resultModel) {
+        
+        [self.titleBtn setTitle:resultModel.name forState:(UIControlStateNormal)];
+        //存储账号信息
+        
+        AIAccountModel *account = [AIAccountTool account];
+        account.screen_name = resultModel.name;
+        [AIAccountTool save:account];
+        
+    } failure:^(NSError *error) {
+        AILog(@"请求失败%@",error.description);
+    }];
 }
 
 /**
@@ -125,6 +138,7 @@
 
 
 }
+
 #pragma mark -刷新加载
 -(void)refreshAndLoad{
     /*//1.刷新

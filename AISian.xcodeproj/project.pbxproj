@@ -27,6 +27,10 @@
 		45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FDC1BB84FEF003179D0 /* AITemp3ViewController.m */; };
 		45F42FDF1BB84FEF003179D0 /* AITemp3ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */; };
 		45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */; };
+		45FF237A1BCC168700C46722 /* AIUserInfoParamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FF23791BCC168700C46722 /* AIUserInfoParamModel.m */; settings = {ASSET_TAGS = (); }; };
+		45FF237D1BCC172800C46722 /* AIUserInfoResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FF237C1BCC172800C46722 /* AIUserInfoResultModel.m */; settings = {ASSET_TAGS = (); }; };
+		45FF23801BCC1D1000C46722 /* AIComposeParamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FF237F1BCC1D1000C46722 /* AIComposeParamModel.m */; settings = {ASSET_TAGS = (); }; };
+		45FF23831BCC1D3900C46722 /* AIComposeResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FF23821BCC1D3900C46722 /* AIComposeResultModel.m */; settings = {ASSET_TAGS = (); }; };
 		BC01DB121BC5F9B5008F6438 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC01DB111BC5F9B5008F6438 /* Images.xcassets */; };
 		BC01DB3B1BC600D3008F6438 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BC01DB171BC600D3008F6438 /* AFHTTPRequestOperation.m */; };
 		BC01DB3C1BC600D3008F6438 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BC01DB191BC600D3008F6438 /* AFHTTPRequestOperationManager.m */; };
@@ -137,6 +141,14 @@
 		45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AITemp3ViewController.xib; sourceTree = "<group>"; };
 		45F42FE11BB8B85E003179D0 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		45F42FE21BB8B85E003179D0 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		45FF23781BCC168700C46722 /* AIUserInfoParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserInfoParamModel.h; sourceTree = "<group>"; };
+		45FF23791BCC168700C46722 /* AIUserInfoParamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserInfoParamModel.m; sourceTree = "<group>"; };
+		45FF237B1BCC172800C46722 /* AIUserInfoResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserInfoResultModel.h; sourceTree = "<group>"; };
+		45FF237C1BCC172800C46722 /* AIUserInfoResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserInfoResultModel.m; sourceTree = "<group>"; };
+		45FF237E1BCC1D1000C46722 /* AIComposeParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIComposeParamModel.h; sourceTree = "<group>"; };
+		45FF237F1BCC1D1000C46722 /* AIComposeParamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIComposeParamModel.m; sourceTree = "<group>"; };
+		45FF23811BCC1D3900C46722 /* AIComposeResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIComposeResultModel.h; sourceTree = "<group>"; };
+		45FF23821BCC1D3900C46722 /* AIComposeResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIComposeResultModel.m; sourceTree = "<group>"; };
 		BC01DB111BC5F9B5008F6438 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BC01DB161BC600D3008F6438 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		BC01DB171BC600D3008F6438 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
@@ -480,6 +492,14 @@
 				BC01DB831BC63425008F6438 /* AIAccountModel.m */,
 				BCE25AC21BCB80E100083565 /* AIPhoto.h */,
 				BCE25AC31BCB80E100083565 /* AIPhoto.m */,
+				45FF23781BCC168700C46722 /* AIUserInfoParamModel.h */,
+				45FF23791BCC168700C46722 /* AIUserInfoParamModel.m */,
+				45FF237B1BCC172800C46722 /* AIUserInfoResultModel.h */,
+				45FF237C1BCC172800C46722 /* AIUserInfoResultModel.m */,
+				45FF237E1BCC1D1000C46722 /* AIComposeParamModel.h */,
+				45FF237F1BCC1D1000C46722 /* AIComposeParamModel.m */,
+				45FF23811BCC1D3900C46722 /* AIComposeResultModel.h */,
+				45FF23821BCC1D3900C46722 /* AIComposeResultModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -947,6 +967,7 @@
 				BC01DB401BC600D3008F6438 /* AFURLConnectionOperation.m in Sources */,
 				BC47EDDF1BC672D3000A02C7 /* AIStatusesModel.m in Sources */,
 				BC01DB7D1BC62AD7008F6438 /* AIControllerTool.m in Sources */,
+				45FF23831BCC1D3900C46722 /* AIComposeResultModel.m in Sources */,
 				452838AF1BC5510100EB31BF /* AIOAuthViewController.m in Sources */,
 				BCE25AD91BCB876A00083565 /* MJArgument.m in Sources */,
 				45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */,
@@ -966,6 +987,7 @@
 				BCAC990A1BC8E8C400F51E9E /* AIComposeToolbar.m in Sources */,
 				BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */,
 				45F42FD61BB84EB1003179D0 /* AITemp2ViewController.m in Sources */,
+				45FF23801BCC1D1000C46722 /* AIComposeParamModel.m in Sources */,
 				BCD5050B1BB65CA400A9E7BB /* AIMessageViewController.m in Sources */,
 				45D9CD401BC8153E00323A94 /* AILoadMoreFooter.m in Sources */,
 				BC01DB801BC63305008F6438 /* AIAccountTool.m in Sources */,
@@ -1000,6 +1022,7 @@
 				BC01DB411BC600D3008F6438 /* AFURLRequestSerialization.m in Sources */,
 				BCE25ADD1BCB876A00083565 /* MJType.m in Sources */,
 				BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */,
+				45FF237A1BCC168700C46722 /* AIUserInfoParamModel.m in Sources */,
 				452837891BBFE4BF00EB31BF /* AINewFeatureViewController.m in Sources */,
 				BC01DB461BC600D3008F6438 /* UIAlertView+AFNetworking.m in Sources */,
 				45F42FDE1BB84FEF003179D0 /* AITemp3ViewController.m in Sources */,
@@ -1010,6 +1033,7 @@
 				45F42FCC1BB8071A003179D0 /* AIBaseNavController.m in Sources */,
 				BC6A8EFF1BCA8D81001CE69F /* AIHttpTool.m in Sources */,
 				BC01DB791BC60121008F6438 /* MBProgressHUD.m in Sources */,
+				45FF237D1BCC172800C46722 /* AIUserInfoResultModel.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
 				BC01DB861BC649D3008F6438 /* Foundation+Log.m in Sources */,
 				BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */,
