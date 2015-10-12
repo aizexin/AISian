@@ -11,6 +11,9 @@
 		452837821BBFDB9700EB31BF /* AIComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452837811BBFDB9700EB31BF /* AIComposeViewController.m */; };
 		452837891BBFE4BF00EB31BF /* AINewFeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452837881BBFE4BF00EB31BF /* AINewFeatureViewController.m */; };
 		452838AF1BC5510100EB31BF /* AIOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 452838AE1BC5510100EB31BF /* AIOAuthViewController.m */; };
+		45D814901BCACCC700AB95C1 /* AIStatusesTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D8148F1BCACCC700AB95C1 /* AIStatusesTool.m */; settings = {ASSET_TAGS = (); }; };
+		45D814931BCACF6200AB95C1 /* AIHomeStatusesParamModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D814921BCACF6200AB95C1 /* AIHomeStatusesParamModel.m */; settings = {ASSET_TAGS = (); }; };
+		45D814961BCACF9D00AB95C1 /* AIHomeStatusesResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D814951BCACF9D00AB95C1 /* AIHomeStatusesResultModel.m */; settings = {ASSET_TAGS = (); }; };
 		45D9CD401BC8153E00323A94 /* AILoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45D9CD3E1BC8153E00323A94 /* AILoadMoreFooter.m */; };
 		45D9CD411BC8153E00323A94 /* AILoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D9CD3F1BC8153E00323A94 /* AILoadMoreFooter.xib */; };
 		45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 45DFBEEB1BB9979D000584FD /* UIImage+Extension.m */; };
@@ -107,6 +110,12 @@
 		452837881BBFE4BF00EB31BF /* AINewFeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AINewFeatureViewController.m; sourceTree = "<group>"; };
 		452838AD1BC5510100EB31BF /* AIOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIOAuthViewController.h; sourceTree = "<group>"; };
 		452838AE1BC5510100EB31BF /* AIOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIOAuthViewController.m; sourceTree = "<group>"; };
+		45D8148E1BCACCC700AB95C1 /* AIStatusesTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusesTool.h; sourceTree = "<group>"; };
+		45D8148F1BCACCC700AB95C1 /* AIStatusesTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusesTool.m; sourceTree = "<group>"; };
+		45D814911BCACF6200AB95C1 /* AIHomeStatusesParamModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeStatusesParamModel.h; sourceTree = "<group>"; };
+		45D814921BCACF6200AB95C1 /* AIHomeStatusesParamModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIHomeStatusesParamModel.m; sourceTree = "<group>"; };
+		45D814941BCACF9D00AB95C1 /* AIHomeStatusesResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIHomeStatusesResultModel.h; sourceTree = "<group>"; };
+		45D814951BCACF9D00AB95C1 /* AIHomeStatusesResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIHomeStatusesResultModel.m; sourceTree = "<group>"; };
 		45D9CD3D1BC8153E00323A94 /* AILoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AILoadMoreFooter.h; sourceTree = "<group>"; };
 		45D9CD3E1BC8153E00323A94 /* AILoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AILoadMoreFooter.m; sourceTree = "<group>"; };
 		45D9CD3F1BC8153E00323A94 /* AILoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AILoadMoreFooter.xib; sourceTree = "<group>"; };
@@ -461,6 +470,8 @@
 				BC01DB7F1BC63305008F6438 /* AIAccountTool.m */,
 				BC6A8EFD1BCA8D81001CE69F /* AIHttpTool.h */,
 				BC6A8EFE1BCA8D81001CE69F /* AIHttpTool.m */,
+				45D8148E1BCACCC700AB95C1 /* AIStatusesTool.h */,
+				45D8148F1BCACCC700AB95C1 /* AIStatusesTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -532,6 +543,10 @@
 				BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */,
 				BC47EDDD1BC672D3000A02C7 /* AIStatusesModel.h */,
 				BC47EDDE1BC672D3000A02C7 /* AIStatusesModel.m */,
+				45D814911BCACF6200AB95C1 /* AIHomeStatusesParamModel.h */,
+				45D814921BCACF6200AB95C1 /* AIHomeStatusesParamModel.m */,
+				45D814941BCACF9D00AB95C1 /* AIHomeStatusesResultModel.h */,
+				45D814951BCACF9D00AB95C1 /* AIHomeStatusesResultModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -961,6 +976,7 @@
 				BC6189341BC92341002E0B93 /* MJRefreshHeaderView.m in Sources */,
 				BC6189321BC92341002E0B93 /* MJRefreshConst.m in Sources */,
 				BC6189311BC92341002E0B93 /* MJRefreshBaseView.m in Sources */,
+				45D814901BCACCC700AB95C1 /* AIStatusesTool.m in Sources */,
 				BC01DC021BC65B08008F6438 /* NSObject+MJCoding.m in Sources */,
 				BC01DB3F1BC600D3008F6438 /* AFSecurityPolicy.m in Sources */,
 				BC01DBFB1BC65B08008F6438 /* MJDictionaryCache.m in Sources */,
@@ -970,12 +986,14 @@
 				BCAC98EE1BC8A18100F51E9E /* AITextView.m in Sources */,
 				BC01DB471BC600D3008F6438 /* UIButton+AFNetworking.m in Sources */,
 				BC6189351BC92341002E0B93 /* UIScrollView+Extension.m in Sources */,
+				45D814961BCACF9D00AB95C1 /* AIHomeStatusesResultModel.m in Sources */,
 				45F42FD11BB84E6C003179D0 /* AITemp1ViewController.m in Sources */,
 				BC01DB3D1BC600D3008F6438 /* AFHTTPSessionManager.m in Sources */,
 				BC01DB771BC60121008F6438 /* MBProgressHUD+NJ.m in Sources */,
 				BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */,
 				BC01DB3E1BC600D3008F6438 /* AFNetworkReachabilityManager.m in Sources */,
 				BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */,
+				45D814931BCACF6200AB95C1 /* AIHomeStatusesParamModel.m in Sources */,
 				BC01DB441BC600D3008F6438 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				BC01DC001BC65B08008F6438 /* MJPropertyType.m in Sources */,
 				BC6189361BC92341002E0B93 /* UIScrollView+MJRefresh.m in Sources */,

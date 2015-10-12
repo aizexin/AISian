@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface AIHttpTool : NSObject
-//[AIHttpTool get:@"" params:(请求参数-模型) success:^(id responseObject){
-//    
-//} failure:^(NSError *error){
-//    
-//}];
+
+
 +(void)get:(NSString*)path params:(NSDictionary*)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
 +(void)post:(NSString*)path params:(NSDictionary*)params success:(void(^)(id responseObject))success failure:(void(^)(NSError *error))failure;
+#warning 无用代码
++(void)postPath:(NSString*)path params:(NSDictionary*)params forData:(void (^)(id forData))data success:(void (^)(id responseObject))success failure:(void (^)(NSError *error))failure;
 @end
