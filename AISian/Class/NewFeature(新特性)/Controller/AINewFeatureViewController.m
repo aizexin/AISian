@@ -116,7 +116,6 @@
     pageControl.centerY = self.view.height - 30;
     self.pageControl = pageControl;
     [self.view addSubview:pageControl];
-    
 }
 
 #pragma mark -UIScrollViewDelegate

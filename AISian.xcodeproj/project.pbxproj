@@ -64,7 +64,6 @@
 		BC02419C1BCCD8D500175D63 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241911BCCD8D500175D63 /* MJRefreshHeaderView.m */; };
 		BC02419D1BCCD8D500175D63 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241931BCCD8D500175D63 /* UIScrollView+Extension.m */; };
 		BC02419E1BCCD8D500175D63 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241951BCCD8D500175D63 /* UIScrollView+MJRefresh.m */; };
-		BC02419F1BCCD8D500175D63 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241971BCCD8D500175D63 /* UIView+Extension.m */; };
 		BC0241B41BCCDA0F00175D63 /* MJArgument.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241A21BCCDA0F00175D63 /* MJArgument.m */; };
 		BC0241B51BCCDA0F00175D63 /* MJIvar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241A51BCCDA0F00175D63 /* MJIvar.m */; };
 		BC0241B61BCCDA0F00175D63 /* MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241A71BCCDA0F00175D63 /* MJMember.m */; };
@@ -74,6 +73,15 @@
 		BC0241BA1BCCDA0F00175D63 /* NSObject+MJCoding.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241AF1BCCDA0F00175D63 /* NSObject+MJCoding.m */; };
 		BC0241BB1BCCDA0F00175D63 /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241B11BCCDA0F00175D63 /* NSObject+MJKeyValue.m */; };
 		BC0241BC1BCCDA0F00175D63 /* NSObject+MJMember.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241B31BCCDA0F00175D63 /* NSObject+MJMember.m */; };
+		BC0241C61BCD22C200175D63 /* AIStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241C51BCD22C200175D63 /* AIStatusCell.m */; };
+		BC0241C91BCD22F100175D63 /* AIStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241C81BCD22F100175D63 /* AIStatusDetailView.m */; };
+		BC0241CC1BCD231200175D63 /* AIStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241CB1BCD231200175D63 /* AIStatusToolbar.m */; };
+		BC0241CF1BCD234600175D63 /* AIStatusOriginalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241CE1BCD234600175D63 /* AIStatusOriginalView.m */; };
+		BC0241D21BCD236E00175D63 /* AIStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241D11BCD236E00175D63 /* AIStatusRetweetedView.m */; };
+		BC0241D61BCD24F000175D63 /* AIStatusFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241D51BCD24F000175D63 /* AIStatusFrame.m */; };
+		BC0241D91BCD250500175D63 /* AIStatusDetailFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241D81BCD250500175D63 /* AIStatusDetailFrame.m */; };
+		BC0241DC1BCD253100175D63 /* AIStatusOriginalFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241DB1BCD253100175D63 /* AIStatusOriginalFrame.m */; };
+		BC0241DF1BCD255D00175D63 /* AIStatusRetweetedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241DE1BCD255D00175D63 /* AIStatusRetweetedFrame.m */; };
 		BC47EDDC1BC672B6000A02C7 /* AIUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */; };
 		BC47EDDF1BC672D3000A02C7 /* AIStatusesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EDDE1BC672D3000A02C7 /* AIStatusesModel.m */; };
 		BC6A8EFF1BCA8D81001CE69F /* AIHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A8EFE1BCA8D81001CE69F /* AIHttpTool.m */; };
@@ -216,8 +224,6 @@
 		BC0241931BCCD8D500175D63 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
 		BC0241941BCCD8D500175D63 /* UIScrollView+MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+MJRefresh.h"; sourceTree = "<group>"; };
 		BC0241951BCCD8D500175D63 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
-		BC0241961BCCD8D500175D63 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
-		BC0241971BCCD8D500175D63 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		BC0241A11BCCDA0F00175D63 /* MJArgument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJArgument.h; sourceTree = "<group>"; };
 		BC0241A21BCCDA0F00175D63 /* MJArgument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJArgument.m; sourceTree = "<group>"; };
 		BC0241A31BCCDA0F00175D63 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
@@ -237,6 +243,24 @@
 		BC0241B11BCCDA0F00175D63 /* NSObject+MJKeyValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJKeyValue.m"; sourceTree = "<group>"; };
 		BC0241B21BCCDA0F00175D63 /* NSObject+MJMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MJMember.h"; sourceTree = "<group>"; };
 		BC0241B31BCCDA0F00175D63 /* NSObject+MJMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJMember.m"; sourceTree = "<group>"; };
+		BC0241C41BCD22C200175D63 /* AIStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusCell.h; sourceTree = "<group>"; };
+		BC0241C51BCD22C200175D63 /* AIStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusCell.m; sourceTree = "<group>"; };
+		BC0241C71BCD22F100175D63 /* AIStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusDetailView.h; sourceTree = "<group>"; };
+		BC0241C81BCD22F100175D63 /* AIStatusDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusDetailView.m; sourceTree = "<group>"; };
+		BC0241CA1BCD231200175D63 /* AIStatusToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusToolbar.h; sourceTree = "<group>"; };
+		BC0241CB1BCD231200175D63 /* AIStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusToolbar.m; sourceTree = "<group>"; };
+		BC0241CD1BCD234600175D63 /* AIStatusOriginalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusOriginalView.h; sourceTree = "<group>"; };
+		BC0241CE1BCD234600175D63 /* AIStatusOriginalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusOriginalView.m; sourceTree = "<group>"; };
+		BC0241D01BCD236E00175D63 /* AIStatusRetweetedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusRetweetedView.h; sourceTree = "<group>"; };
+		BC0241D11BCD236E00175D63 /* AIStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusRetweetedView.m; sourceTree = "<group>"; };
+		BC0241D41BCD24F000175D63 /* AIStatusFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusFrame.h; sourceTree = "<group>"; };
+		BC0241D51BCD24F000175D63 /* AIStatusFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusFrame.m; sourceTree = "<group>"; };
+		BC0241D71BCD250500175D63 /* AIStatusDetailFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusDetailFrame.h; sourceTree = "<group>"; };
+		BC0241D81BCD250500175D63 /* AIStatusDetailFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusDetailFrame.m; sourceTree = "<group>"; };
+		BC0241DA1BCD253100175D63 /* AIStatusOriginalFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusOriginalFrame.h; sourceTree = "<group>"; };
+		BC0241DB1BCD253100175D63 /* AIStatusOriginalFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusOriginalFrame.m; sourceTree = "<group>"; };
+		BC0241DD1BCD255D00175D63 /* AIStatusRetweetedFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusRetweetedFrame.h; sourceTree = "<group>"; };
+		BC0241DE1BCD255D00175D63 /* AIStatusRetweetedFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusRetweetedFrame.m; sourceTree = "<group>"; };
 		BC47EDDA1BC672B6000A02C7 /* AIUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserModel.h; sourceTree = "<group>"; };
 		BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserModel.m; sourceTree = "<group>"; };
 		BC47EDDD1BC672D3000A02C7 /* AIStatusesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusesModel.h; sourceTree = "<group>"; };
@@ -529,8 +553,6 @@
 				BC0241931BCCD8D500175D63 /* UIScrollView+Extension.m */,
 				BC0241941BCCD8D500175D63 /* UIScrollView+MJRefresh.h */,
 				BC0241951BCCD8D500175D63 /* UIScrollView+MJRefresh.m */,
-				BC0241961BCCD8D500175D63 /* UIView+Extension.h */,
-				BC0241971BCCD8D500175D63 /* UIView+Extension.m */,
 			);
 			path = MJrefesh;
 			sourceTree = "<group>";
@@ -561,9 +583,42 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		BC0241C31BCD226C00175D63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BC0241C41BCD22C200175D63 /* AIStatusCell.h */,
+				BC0241C51BCD22C200175D63 /* AIStatusCell.m */,
+				BC0241C71BCD22F100175D63 /* AIStatusDetailView.h */,
+				BC0241C81BCD22F100175D63 /* AIStatusDetailView.m */,
+				BC0241CA1BCD231200175D63 /* AIStatusToolbar.h */,
+				BC0241CB1BCD231200175D63 /* AIStatusToolbar.m */,
+				BC0241CD1BCD234600175D63 /* AIStatusOriginalView.h */,
+				BC0241CE1BCD234600175D63 /* AIStatusOriginalView.m */,
+				BC0241D01BCD236E00175D63 /* AIStatusRetweetedView.h */,
+				BC0241D11BCD236E00175D63 /* AIStatusRetweetedView.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		BC0241D31BCD240000175D63 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				BC0241D41BCD24F000175D63 /* AIStatusFrame.h */,
+				BC0241D51BCD24F000175D63 /* AIStatusFrame.m */,
+				BC0241D71BCD250500175D63 /* AIStatusDetailFrame.h */,
+				BC0241D81BCD250500175D63 /* AIStatusDetailFrame.m */,
+				BC0241DA1BCD253100175D63 /* AIStatusOriginalFrame.h */,
+				BC0241DB1BCD253100175D63 /* AIStatusOriginalFrame.m */,
+				BC0241DD1BCD255D00175D63 /* AIStatusRetweetedFrame.h */,
+				BC0241DE1BCD255D00175D63 /* AIStatusRetweetedFrame.m */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
 		BC9984FE1BBA946200CA858C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BC0241D31BCD240000175D63 /* Frame */,
 				BC47EDDA1BC672B6000A02C7 /* AIUserModel.h */,
 				BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */,
 				BC47EDDD1BC672D3000A02C7 /* AIStatusesModel.h */,
@@ -586,6 +641,7 @@
 		BC9985001BBA946200CA858C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BC0241C31BCD226C00175D63 /* Cell */,
 				45D9CD3D1BC8153E00323A94 /* AILoadMoreFooter.h */,
 				45D9CD3E1BC8153E00323A94 /* AILoadMoreFooter.m */,
 				45D9CD3F1BC8153E00323A94 /* AILoadMoreFooter.xib */,
@@ -977,6 +1033,7 @@
 				BC01DB401BC600D3008F6438 /* AFURLConnectionOperation.m in Sources */,
 				BC47EDDF1BC672D3000A02C7 /* AIStatusesModel.m in Sources */,
 				BC01DB7D1BC62AD7008F6438 /* AIControllerTool.m in Sources */,
+				BC0241DF1BCD255D00175D63 /* AIStatusRetweetedFrame.m in Sources */,
 				45FF23831BCC1D3900C46722 /* AIComposeResultModel.m in Sources */,
 				452838AF1BC5510100EB31BF /* AIOAuthViewController.m in Sources */,
 				45F42FE31BB8B85E003179D0 /* UIBarButtonItem+Extension.m in Sources */,
@@ -985,9 +1042,11 @@
 				BCAC990D1BC90B7A00F51E9E /* AIComposePhotosView.m in Sources */,
 				BC01DB3B1BC600D3008F6438 /* AFHTTPRequestOperation.m in Sources */,
 				BC01DB421BC600D3008F6438 /* AFURLResponseSerialization.m in Sources */,
+				BC0241CF1BCD234600175D63 /* AIStatusOriginalView.m in Sources */,
 				45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */,
 				BC01DB481BC600D3008F6438 /* UIImageView+AFNetworking.m in Sources */,
 				BC0241B41BCCDA0F00175D63 /* MJArgument.m in Sources */,
+				BC0241D61BCD24F000175D63 /* AIStatusFrame.m in Sources */,
 				BC0241BA1BCCDA0F00175D63 /* NSObject+MJCoding.m in Sources */,
 				BC01DB4B1BC600D3008F6438 /* UIWebView+AFNetworking.m in Sources */,
 				BCD505051BB65AFB00A9E7BB /* AITabBarViewController.m in Sources */,
@@ -995,9 +1054,9 @@
 				452837821BBFDB9700EB31BF /* AIComposeViewController.m in Sources */,
 				BCAC990A1BC8E8C400F51E9E /* AIComposeToolbar.m in Sources */,
 				BC0241BB1BCCDA0F00175D63 /* NSObject+MJKeyValue.m in Sources */,
+				BC0241C61BCD22C200175D63 /* AIStatusCell.m in Sources */,
 				BC94811D1BB90A93004CA8DA /* UIView+Extension.m in Sources */,
 				45F42FD61BB84EB1003179D0 /* AITemp2ViewController.m in Sources */,
-				BC02419F1BCCD8D500175D63 /* UIView+Extension.m in Sources */,
 				45FF23801BCC1D1000C46722 /* AIComposeParamModel.m in Sources */,
 				BCD5050B1BB65CA400A9E7BB /* AIMessageViewController.m in Sources */,
 				45D9CD401BC8153E00323A94 /* AILoadMoreFooter.m in Sources */,
@@ -1005,6 +1064,7 @@
 				BCD503001BB63DD100A9E7BB /* AppDelegate.m in Sources */,
 				BC0241B91BCCDA0F00175D63 /* MJTypeEncoding.m in Sources */,
 				45D814901BCACCC700AB95C1 /* AIStatusesTool.m in Sources */,
+				BC0241C91BCD22F100175D63 /* AIStatusDetailView.m in Sources */,
 				BC01DB3F1BC600D3008F6438 /* AFSecurityPolicy.m in Sources */,
 				BC0241B71BCCDA0F00175D63 /* MJMethod.m in Sources */,
 				BC01DB431BC600D3008F6438 /* AFURLSessionManager.m in Sources */,
@@ -1018,6 +1078,7 @@
 				BC0241BC1BCCDA0F00175D63 /* NSObject+MJMember.m in Sources */,
 				45D814961BCACF9D00AB95C1 /* AIHomeStatusesResultModel.m in Sources */,
 				45F42FD11BB84E6C003179D0 /* AITemp1ViewController.m in Sources */,
+				BC0241D91BCD250500175D63 /* AIStatusDetailFrame.m in Sources */,
 				BCE25AC41BCB80E100083565 /* AIPhoto.m in Sources */,
 				BC01DB3D1BC600D3008F6438 /* AFHTTPSessionManager.m in Sources */,
 				BC01DB771BC60121008F6438 /* MBProgressHUD+NJ.m in Sources */,
@@ -1047,8 +1108,11 @@
 				BC0240BF1BCC91E900175D63 /* AIBaseTool.m in Sources */,
 				BCD505081BB65C4700A9E7BB /* AIDiscoverViewController.m in Sources */,
 				BC01DB861BC649D3008F6438 /* Foundation+Log.m in Sources */,
+				BC0241D21BCD236E00175D63 /* AIStatusRetweetedView.m in Sources */,
 				BC9985061BBA94BD00CA858C /* AIPopMenu.m in Sources */,
 				4528377D1BBFB3AD00EB31BF /* AITabBar.m in Sources */,
+				BC0241CC1BCD231200175D63 /* AIStatusToolbar.m in Sources */,
+				BC0241DC1BCD253100175D63 /* AIStatusOriginalFrame.m in Sources */,
 				45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */,
 				BC0241991BCCD8D500175D63 /* MJRefreshBaseView.m in Sources */,
 			);

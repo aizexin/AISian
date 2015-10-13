@@ -11,6 +11,7 @@
 
 #import "UIView+Extension.h"
 #import "UIImage+Extension.h"
+
 #define Mainsize ([[UIScreen mainScreen]bounds].size)
 // 颜色
 #define AIColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
@@ -33,5 +34,19 @@
 #define AIAppKey @"568335106"
 #define AIAppSecrect @"a41299f2678ae4aee937d6bdc7ecc257"
 #define AIAppRediectURI @"http://www.baidu.com"
+
+// 原创微博昵称字体
+#define AIStatusOrginalNameFont [UIFont systemFontOfSize:14]
+// 原创微博时间字体
+#define AIStatusOrginalTimeFont [UIFont systemFontOfSize:12]
+// 原创微博来源字体
+#define AIStatusOrginalSourceFont AIStatusOrginalTimeFont
+// 原创微博正文字体
+#define AIStatusOrginalTextFont [UIFont systemFontOfSize:15]
+
+// 转发微博昵称字体
+#define AIStatusRetweetedNameFont AIStatusOrginalNameFont
+// 转发微博正文字体
+#define AIStatusRetweetedTextFont AIStatusOrginalTextFont
 
 
