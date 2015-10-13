@@ -24,6 +24,7 @@
 #import "MJRefresh.h"
 #import "AIStatusesTool.h"
 
+
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
 @property(nonatomic,strong)AIPopMenu *popMenu;
@@ -120,8 +121,6 @@
 
         AILog(@"请求成功");
         NSArray *statuses = resultModel.statuses;
-//        AILog(@"%@",[statuses[0] class] );
-
         //讲数据查到最前面
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
         [self.statuses insertObjects:statuses atIndexes:indexSet];
@@ -164,6 +163,7 @@
         [self loadMoreData];
         [self.tableView footerEndRefreshing];
     }];
+    
 }
 /**
  *  加载更多数据
@@ -180,9 +180,9 @@
     }
     [AIStatusesTool homeStatusesWithParams:paramModel success:^(AIHomeStatusesResultModel *resultModel) {
         NSArray *statuses = resultModel.statuses;
-        AILog(@"加载成功");
-        NSArray *oldStatus = [AIStatusesModel objectArrayWithKeyValuesArray:statuses];
-        [self.statuses addObjectsFromArray:oldStatus];
+
+        [self.statuses addObjectsFromArray:statuses];
+        AILog(@"xxxxx----%ld",self.statuses.count);
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         AILog(@"加载失败%@",error.description);

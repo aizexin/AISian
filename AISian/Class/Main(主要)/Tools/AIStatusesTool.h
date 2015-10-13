@@ -13,7 +13,8 @@
 #import "AIUserInfoResultModel.h"
 #import "AIComposeParamModel.h"
 #import "AIComposeResultModel.h"
-@interface AIStatusesTool : NSObject
+#import "AIBaseTool.h"
+@interface AIStatusesTool : AIBaseTool
 //[AIStatusesTool homeStatusesWithParams:(参数模型) success:(返回一个结果模型) failure:(void (^)(NSError *error))];
 +(void)homeStatusesWithParams:(AIHomeStatusesParamModel *)paramModel success:(void (^)(AIHomeStatusesResultModel* resultModel))success failure:(void (^)(NSError *error))failure;
 /**
