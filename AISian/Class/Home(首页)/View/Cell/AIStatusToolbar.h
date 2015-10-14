@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class AIStatusToolbarFrame;
-@interface AIStatusToolbar : UIView
+@interface AIStatusToolbar : UIImageView
 /**
  *  微博工具栏frame
  */

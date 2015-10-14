@@ -15,7 +15,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setBackgroundColor:[UIColor blueColor]];
+        self.image = [UIImage imageNamed:@"timeline_card_bottom_background"];
+//        [self setBackgroundColor:[UIColor blueColor]];
     }
     return self;
 }
