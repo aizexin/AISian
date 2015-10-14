@@ -102,6 +102,7 @@
 		BCD5050E1BB65CB900A9E7BB /* AIProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD5050D1BB65CB900A9E7BB /* AIProfileViewController.m */; };
 		BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD505101BB65D1500A9E7BB /* AiHomeViewController.m */; };
 		BCE25AC41BCB80E100083565 /* AIPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = BCE25AC31BCB80E100083565 /* AIPhoto.m */; };
+		BCEDE6F11BCE72180079070F /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEDE6F01BCE72180079070F /* NSDate+MJ.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +304,8 @@
 		BCE25AC21BCB80E100083565 /* AIPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIPhoto.h; sourceTree = "<group>"; };
 		BCE25AC31BCB80E100083565 /* AIPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIPhoto.m; sourceTree = "<group>"; };
 		BCEDE6ED1BCE5AB60079070F /* temp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = temp.h; sourceTree = "<group>"; };
+		BCEDE6EF1BCE72180079070F /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
+		BCEDE6F01BCE72180079070F /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -407,6 +410,8 @@
 		45F42FE01BB8B838003179D0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				BCEDE6EF1BCE72180079070F /* NSDate+MJ.h */,
+				BCEDE6F01BCE72180079070F /* NSDate+MJ.m */,
 				BC01DB851BC649D3008F6438 /* Foundation+Log.m */,
 				BC94811B1BB90A93004CA8DA /* UIView+Extension.h */,
 				BC94811C1BB90A93004CA8DA /* UIView+Extension.m */,
@@ -1043,6 +1048,7 @@
 				BC02419B1BCCD8D500175D63 /* MJRefreshFooterView.m in Sources */,
 				BCAC990D1BC90B7A00F51E9E /* AIComposePhotosView.m in Sources */,
 				BC01DB3B1BC600D3008F6438 /* AFHTTPRequestOperation.m in Sources */,
+				BCEDE6F11BCE72180079070F /* NSDate+MJ.m in Sources */,
 				BC01DB421BC600D3008F6438 /* AFURLResponseSerialization.m in Sources */,
 				BC0241CF1BCD234600175D63 /* AIStatusOriginalView.m in Sources */,
 				45DFBEEC1BB9979D000584FD /* UIImage+Extension.m in Sources */,

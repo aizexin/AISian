@@ -96,10 +96,20 @@
     self.textcontentLabel.frame = originalFrame.textFrame;
     //时间
     self.timeLabel.text = statuses.created_at;
-    self.timeLabel.frame = originalFrame.timeFrame;
+    self.timeLabel.textColor = [UIColor orangeColor];
+//    self.timeLabel.frame = originalFrame.timeFrame;
+    CGFloat timeX = CGRectGetMinX(self.nameLabel.frame);
+    CGFloat timeY = CGRectGetMaxY(self.nameLabel.frame) + AIStatusCellInset * 0.5;
+    CGSize timeSize = [self.timeLabel.text sizeWithFont:AIStatusOrginalTimeFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    self.timeLabel.frame = (CGRect){{timeX,timeY},timeSize};
+#warning 重新计算frame
     //来源
     self.sourceLabel.text = statuses.source;
-    self.sourceLabel.frame = originalFrame.sourceFrame;
+    //4.设置来源
+    CGFloat sourceX = CGRectGetMaxX(self.timeLabel.frame) + AIStatusCellInset;
+    CGFloat sourceY = timeY;
+    CGSize sourceSize = [self.sourceLabel.text sizeWithFont:AIStatusOrginalSourceFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    self.sourceLabel.frame = (CGRect){{sourceX,sourceY},sourceSize};
     //头像
     NSURL *iconUrl = [NSURL URLWithString:user.profile_image_url];
     [self.iconView setImageWithURL:iconUrl placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];

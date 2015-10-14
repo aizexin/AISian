@@ -15,10 +15,10 @@
 @property (nonatomic, assign) CGRect nameFrame;
 /** 正文 */
 @property (nonatomic, assign) CGRect textFrame;
-/** 来源 */
-@property (nonatomic, assign) CGRect sourceFrame;
-/** 时间 */
-@property (nonatomic, assign) CGRect timeFrame;
+///** 来源 */
+//@property (nonatomic, assign) CGRect sourceFrame;
+///** 时间 */
+//@property (nonatomic, assign) CGRect timeFrame;
 /** 头像 */
 @property (nonatomic, assign) CGRect iconFrame;
 /** vip图片 */

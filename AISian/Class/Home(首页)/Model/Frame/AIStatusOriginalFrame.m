@@ -41,19 +41,18 @@
     }
 
     
-    //3.设置时间
-    CGFloat timeX = nameX;
-    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset * 0.5;
-    CGSize timeSize = [status.created_at sizeWithFont:AIStatusOrginalTimeFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-  
-    self.timeFrame = (CGRect){{timeX,timeY},timeSize};
-    
-    //4.设置来源
-    CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + AIStatusCellInset;
-    CGFloat sourceY = timeY;
-    CGSize sourceSize = [status.source sizeWithFont:AIStatusOrginalSourceFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-    
-    self.sourceFrame = (CGRect){{sourceX,sourceY},sourceSize};
+//    //3.设置时间
+//    CGFloat timeX = nameX;
+//    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset * 0.5;
+//    CGSize timeSize = [status.created_at sizeWithFont:AIStatusOrginalTimeFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+//  
+//    self.timeFrame = (CGRect){{timeX,timeY},timeSize};
+//    
+//    //4.设置来源
+//    CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + AIStatusCellInset;
+//    CGFloat sourceY = timeY;
+//    CGSize sourceSize = [status.source sizeWithFont:AIStatusOrginalSourceFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+//    self.sourceFrame = (CGRect){{sourceX,sourceY},sourceSize};
     
     //5.正文
     CGFloat textX = AIStatusCellInset;

@@ -11,7 +11,6 @@
 @implementation AIUserModel
 
 -(BOOL)isVip{
-    NSLog(@"%d",self.mbtype);
     return self.mbtype > 2;
 }
 @end
