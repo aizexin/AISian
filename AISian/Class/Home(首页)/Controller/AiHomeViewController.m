@@ -327,7 +327,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     AIStatusFrame *statusFrame = self.statusesFrames[indexPath.row];
-    AILog(@"%f",statusFrame.cellHeight);
+//    AILog(@"%f",statusFrame.cellHeight);
     return statusFrame.cellHeight;
 }
 

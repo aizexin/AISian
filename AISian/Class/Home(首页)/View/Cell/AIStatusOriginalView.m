@@ -42,6 +42,7 @@
         UILabel *textLabel = [[UILabel alloc] init];
         textLabel.font = AIStatusOrginalTextFont;
         textLabel.numberOfLines = 0;
+        textLabel.backgroundColor = [UIColor greenColor];
         [self addSubview:textLabel];
         self.textcontentLabel = textLabel;
         

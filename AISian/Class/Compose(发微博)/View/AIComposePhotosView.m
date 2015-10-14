@@ -26,7 +26,6 @@
  *  @param image 添加的图片
  */
 -(void)addImage:(UIImage*)image{
-    AILog(@"%@",image);
     UIImageView *imageV = [[UIImageView alloc]init];
     imageV.image = image;
     [imageV setContentMode:(UIViewContentModeScaleAspectFit)];

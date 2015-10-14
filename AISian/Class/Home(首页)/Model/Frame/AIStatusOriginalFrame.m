@@ -36,19 +36,20 @@
     CGFloat timeY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset;
     CGSize timeSize = [status.created_at sizeWithFont:AIStatusOrginalTimeFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
   
-    self.textFrame = (CGRect){{timeX,timeY},timeSize};
+    self.timeFrame = (CGRect){{timeX,timeY},timeSize};
     
     //4.设置来源
     CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + AIStatusCellInset;
     CGFloat sourceY = timeY;
     CGSize sourceSize = [status.source sizeWithFont:AIStatusOrginalSourceFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+//    AILog(@"来源--------%@",status.source);
     
     self.sourceFrame = (CGRect){{sourceX,sourceY},sourceSize};
     
     //5.正文
-    CGFloat textX = iconX;
-    CGFloat textY = CGRectGetMinY(self.iconFrame) + AIStatusCellInset;
-    CGSize textSize = [status.text sizeWithFont:AIStatusOrginalTextFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    CGFloat textX = AIStatusCellInset;
+    CGFloat textY = CGRectGetMaxY(self.iconFrame) + AIStatusCellInset;
+    CGSize textSize = [status.text sizeWithFont:AIStatusOrginalTextFont maxSize:CGSizeMake(Mainsize.width - 2*AIStatusCellInset , CGFLOAT_MAX)];
     self.textFrame = (CGRect){{textX,textY},textSize};
     
     //6.自己

@@ -11,6 +11,7 @@
 #import "AIStatusRetweetedFrame.h"
 #import "AIStatusesModel.h"
 #import "AIUserModel.h"
+#import "UIImage+Extension.h"
 @interface AIStatusRetweetedView ()
 /**  昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
@@ -27,11 +28,14 @@
         UILabel *nameLabel = [[UILabel alloc]init];
         nameLabel.font = AIStatusRetweetedNameFont;
         [self addSubview:nameLabel];
-        
+        self.nameLabel = nameLabel;
         //设置正文
         UILabel *textLabel = [[UILabel alloc]init];
         textLabel.font = AIStatusRetweetedTextFont;
+        textLabel.numberOfLines = 0;
         [self addSubview:textLabel];
+        self.textLabel = textLabel;
+        self.textLabel.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -46,9 +50,12 @@
     self.nameLabel.text = statuses.user.name;
     self.nameLabel.frame = retweetedFrame.nameFrame;
     //设置内容
-    self.textLabel.text = statuses.text;
+    self.textLabel.text = statuses.retweeted_status.text;
     self.textLabel.frame = retweetedFrame.textFrame;
-    
-    
+
+}
+
+-(void)drawRect:(CGRect)rect{
+    [[UIImage resizedImage:@"tabbar_compose_button"]drawInRect:rect];
 }
 @end

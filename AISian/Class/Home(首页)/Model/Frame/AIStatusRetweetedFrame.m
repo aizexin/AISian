@@ -26,9 +26,9 @@
     CGFloat textY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset;
     CGFloat maxW = Mainsize.width - 2 * textX;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
-    CGSize textSize = [statusesModel.text sizeWithFont:AIStatusRetweetedNameFont maxSize:maxSize];
+    CGSize textSize = [statusesModel.retweeted_status.text sizeWithFont:AIStatusRetweetedTextFont maxSize:maxSize];
     self.textFrame = (CGRect){{textX, textY}, textSize};
-    
+    AILog(@"-------textFrame%@",statusesModel.retweeted_status.text);
     // 自己
     CGFloat x = 0;
     CGFloat y = 0; // 高度 = 原创微博最大的Y值
