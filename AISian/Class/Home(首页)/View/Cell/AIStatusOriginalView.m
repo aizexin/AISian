@@ -23,6 +23,10 @@
 @property (nonatomic, weak) UILabel *timeLabel;
 /** 头像 */
 @property (nonatomic, weak) UIImageView *iconView;
+/**
+ *  会员图标
+ */
+@property(nonatomic,weak)UIImageView *vipView;
 @end
 
 @implementation AIStatusOriginalView
@@ -42,19 +46,18 @@
         UILabel *textLabel = [[UILabel alloc] init];
         textLabel.font = AIStatusOrginalTextFont;
         textLabel.numberOfLines = 0;
-        textLabel.backgroundColor = [UIColor greenColor];
         [self addSubview:textLabel];
         self.textcontentLabel = textLabel;
         
         // 3.时间
         UILabel *timeLabel = [[UILabel alloc] init];
         timeLabel.font = AIStatusOrginalTimeFont;
-        [timeLabel setBackgroundColor:[UIColor yellowColor]];
         [self addSubview:timeLabel];
         self.timeLabel = timeLabel;
         
         // 4.来源
         UILabel *sourceLabel = [[UILabel alloc] init];
+        sourceLabel.textColor = [UIColor lightGrayColor];
         sourceLabel.font = AIStatusOrginalSourceFont;
         [self addSubview:sourceLabel];
         self.sourceLabel = sourceLabel;
@@ -63,6 +66,11 @@
         UIImageView *iconView = [[UIImageView alloc] init];
         [self addSubview:iconView];
         self.iconView = iconView;
+        
+        //6.会员图标
+        UIImageView *vipView = [[UIImageView alloc]init];
+        [self addSubview:vipView];
+        self.vipView = vipView;
     }
     return self;
 }
@@ -73,6 +81,16 @@
     //名称
     self.nameLabel.text = user.name;
     self.nameLabel.frame = originalFrame.nameFrame;
+    if (user.isVip) {
+        self.nameLabel.textColor = [UIColor orangeColor];
+        //设置vip图标
+        NSString *vipRankIamge = [NSString stringWithFormat:@"common_icon_membership_level%d",user.mbrank];
+        self.vipView.image = [UIImage imageNamed:vipRankIamge];
+        self.vipView.frame = originalFrame.vipFrame;
+    }else{
+        self.nameLabel.textColor = [UIColor blackColor];
+        self.vipView.frame = CGRectZero;
+    }
     //正文内容
     self.textcontentLabel.text = statuses.text;
     self.textcontentLabel.frame = originalFrame.textFrame;
@@ -86,7 +104,7 @@
     NSURL *iconUrl = [NSURL URLWithString:user.profile_image_url];
     [self.iconView setImageWithURL:iconUrl placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     self.iconView.frame = originalFrame.iconFrame;
-    
+ 
 }
 
 @end

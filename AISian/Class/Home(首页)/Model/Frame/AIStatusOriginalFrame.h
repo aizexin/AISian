@@ -21,10 +21,13 @@
 @property (nonatomic, assign) CGRect timeFrame;
 /** 头像 */
 @property (nonatomic, assign) CGRect iconFrame;
-
+/** vip图片 */
+@property (nonatomic, assign) CGRect vipFrame;
 /** 自己的frame */
 @property (nonatomic, assign) CGRect frame;
 
 /** 微博数据 */
 @property (nonatomic, strong) AIStatusesModel *status;
+
+
 @end

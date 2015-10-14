@@ -10,7 +10,7 @@
 
 @class AIStatusRetweetedFrame;
 
-@interface AIStatusRetweetedView : UIView
+@interface AIStatusRetweetedView : UIImageView
 
 @property(nonatomic,strong)AIStatusRetweetedFrame *retweetedFrame;
 @end

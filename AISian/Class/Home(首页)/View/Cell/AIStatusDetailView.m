@@ -10,6 +10,7 @@
 #import "AIStatusRetweetedView.h"
 #import "AIStatusOriginalView.h"
 #import "AIStatusDetailFrame.h"
+#import "AIDefine.h"
 @interface AIStatusDetailView ()
 /**
  *  转发的微博View
@@ -26,6 +27,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //设置背景图片
+        self.image = [UIImage resizedImage:@"timeline_card_top_background"];
+        
         AIStatusRetweetedView *statusRetweetedView = [[AIStatusRetweetedView alloc]init];
         self.statusRetweetedView = statusRetweetedView;
         [self addSubview:statusRetweetedView];

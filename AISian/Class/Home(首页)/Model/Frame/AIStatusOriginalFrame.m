@@ -26,14 +26,24 @@
     //2.设置昵称
     CGFloat nameX = CGRectGetMaxX(self.iconFrame) + AIStatusCellInset;
     CGFloat nameY = iconY;
-    
    CGSize nameSize = [status.user.name sizeWithFont:AIStatusOrginalNameFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-   
     self.nameFrame = (CGRect){{nameX,nameY},nameSize};
+    
+    //设置vip图标
+    AIUserModel *userModel = status.user;
+    if (userModel.isVip) {
+        //7.vip图标
+        CGFloat vipX = CGRectGetMaxX(self.nameFrame) + AIStatusCellMargin *0.5;
+        CGFloat vipY = nameY;
+        CGFloat vipW = nameSize.height;
+        CGFloat vipH = vipW;
+        self.vipFrame = CGRectMake(vipX, vipY, vipW, vipH);
+    }
+
     
     //3.设置时间
     CGFloat timeX = nameX;
-    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset;
+    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset * 0.5;
     CGSize timeSize = [status.created_at sizeWithFont:AIStatusOrginalTimeFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
   
     self.timeFrame = (CGRect){{timeX,timeY},timeSize};
@@ -42,7 +52,6 @@
     CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + AIStatusCellInset;
     CGFloat sourceY = timeY;
     CGSize sourceSize = [status.source sizeWithFont:AIStatusOrginalSourceFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-//    AILog(@"来源--------%@",status.source);
     
     self.sourceFrame = (CGRect){{sourceX,sourceY},sourceSize};
     
@@ -58,5 +67,9 @@
     CGFloat W = Mainsize.width;
     CGFloat H = CGRectGetMaxY(self.textFrame);
     self.frame = CGRectMake(X, Y, W, H);
+    
+    
+    
+    
 }
 @end

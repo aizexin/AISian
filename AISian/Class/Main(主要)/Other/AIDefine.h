@@ -37,6 +37,8 @@
 
 
 // cell的计算参数
+// cell之间的间距
+#define AIStatusCellMargin 10
 // cell的内边距
 #define AIStatusCellInset 10
 // 原创微博昵称字体

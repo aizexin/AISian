@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class AIStatusOriginalView,AIStatusRetweetedView,AIStatusDetailFrame,AIStatusesModel;
-@interface AIStatusDetailView : UIView
+@interface AIStatusDetailView : UIImageView
 
 /**
  *  微博详情的frame

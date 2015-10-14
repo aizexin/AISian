@@ -302,6 +302,7 @@
 		BCD505121BB65E4400A9E7BB /* AIDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIDefine.h; sourceTree = "<group>"; };
 		BCE25AC21BCB80E100083565 /* AIPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIPhoto.h; sourceTree = "<group>"; };
 		BCE25AC31BCB80E100083565 /* AIPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIPhoto.m; sourceTree = "<group>"; };
+		BCEDE6ED1BCE5AB60079070F /* temp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = temp.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -398,6 +399,7 @@
 				45F42FDB1BB84FEF003179D0 /* AITemp3ViewController.h */,
 				45F42FDC1BB84FEF003179D0 /* AITemp3ViewController.m */,
 				45F42FDD1BB84FEF003179D0 /* AITemp3ViewController.xib */,
+				BCEDE6ED1BCE5AB60079070F /* temp.h */,
 			);
 			name = temp;
 			sourceTree = "<group>";

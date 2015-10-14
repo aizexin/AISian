@@ -59,8 +59,13 @@
     return _statusesFrames;
 }
 
+#pragma mark -初始化方法
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = AIColor(211, 211, 211);
+    //去掉分割线
+    [self.tableView setSeparatorStyle:(UITableViewCellSeparatorStyleNone)];
 //    AILog(@"%@",NSHomeDirectory());
     //设置导航栏内容
     [self setupNavBar];
@@ -316,6 +321,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     AIStatusCell *cell = [AIStatusCell statusCell:tableView];
+    cell.backgroundColor = [UIColor clearColor];
     cell.statusFrame = self.statusesFrames[indexPath.row];
     return cell;
 }
@@ -323,12 +329,13 @@
 {
     AITemp1ViewController *temp1VC = [[AITemp1ViewController alloc]init];
     [self.navigationController pushViewController:temp1VC animated:YES];
+
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     AIStatusFrame *statusFrame = self.statusesFrames[indexPath.row];
-//    AILog(@"%f",statusFrame.cellHeight);
-    return statusFrame.cellHeight;
+    
+    return statusFrame.cellHeight ;
 }
 
 @end

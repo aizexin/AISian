@@ -35,8 +35,10 @@
 
     //自己的frame
     CGFloat x = 0;
-    CGFloat y = 0;
+    CGFloat y = AIStatusCellMargin;
     CGFloat w = Mainsize.width;
     self.frame = CGRectMake(x, y, w, h);
 }
+
+
 @end

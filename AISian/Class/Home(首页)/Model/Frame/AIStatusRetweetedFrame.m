@@ -18,17 +18,17 @@
     // 1.昵称
     CGFloat nameX = AIStatusCellInset;
     CGFloat nameY = AIStatusCellInset;
-    CGSize nameSize = [statusesModel.user.name sizeWithFont:AIStatusRetweetedNameFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
+    NSString *name = [NSString stringWithFormat:@"@%@",statusesModel.user.name];
+    CGSize nameSize = [name sizeWithFont:AIStatusRetweetedNameFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
     self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
     
     // 2.正文
     CGFloat textX = nameX;
-    CGFloat textY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset;
+    CGFloat textY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset * 0.5;
     CGFloat maxW = Mainsize.width - 2 * textX;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
     CGSize textSize = [statusesModel.retweeted_status.text sizeWithFont:AIStatusRetweetedTextFont maxSize:maxSize];
     self.textFrame = (CGRect){{textX, textY}, textSize};
-    AILog(@"-------textFrame%@",statusesModel.retweeted_status.text);
     // 自己
     CGFloat x = 0;
     CGFloat y = 0; // 高度 = 原创微博最大的Y值

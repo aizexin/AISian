@@ -18,4 +18,20 @@
  *  头像缩略图
  */
 @property(nonatomic ,copy)NSString *profile_image_url;
+
+//mbtype = 12,
+//mbrank = 5,
+/**
+ *  是否会员
+ */
+@property(nonatomic,assign)int mbtype;
+/**
+ *  会员等级
+ */
+@property(nonatomic,assign)int mbrank;
+
+/**
+ *  判断是否会员
+ */
+@property(nonatomic,assign,getter=isVip,readonly)BOOL vip;
 @end

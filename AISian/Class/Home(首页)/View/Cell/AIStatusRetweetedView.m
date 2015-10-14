@@ -24,8 +24,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //设置背景
+        self.image = [UIImage resizedImage:@"timeline_retweet_background"];
+        
         //设置昵称
         UILabel *nameLabel = [[UILabel alloc]init];
+        nameLabel.textColor = AIColor(74, 102, 10);
         nameLabel.font = AIStatusRetweetedNameFont;
         [self addSubview:nameLabel];
         self.nameLabel = nameLabel;
@@ -35,7 +39,6 @@
         textLabel.numberOfLines = 0;
         [self addSubview:textLabel];
         self.textLabel = textLabel;
-        self.textLabel.backgroundColor = [UIColor redColor];
     }
     return self;
 }
@@ -47,7 +50,8 @@
     //取出微博数据
     AIStatusesModel *statuses = retweetedFrame.statusesModel;
     //设置昵称
-    self.nameLabel.text = statuses.user.name;
+//    self.nameLabel.text = statuses.user.name;
+    self.nameLabel.text = [NSString stringWithFormat:@"@%@",statuses.user.name];
     self.nameLabel.frame = retweetedFrame.nameFrame;
     //设置内容
     self.textLabel.text = statuses.retweeted_status.text;
@@ -55,7 +59,7 @@
 
 }
 
--(void)drawRect:(CGRect)rect{
-    [[UIImage resizedImage:@"tabbar_compose_button"]drawInRect:rect];
-}
+//-(void)drawRect:(CGRect)rect{
+////    [[UIImage resizedImage:@"tabbar_compose_button"]drawInRect:rect];
+//}
 @end
