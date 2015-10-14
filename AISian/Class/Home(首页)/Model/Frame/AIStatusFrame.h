@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@class AIStatusDetailFrame,AIStatusToolbarFrame,AIStatusesModel;
+#import <UIKit/UIKit.h>
+@class AIStatusDetailFrame,AIStatusesModel;
 @interface AIStatusFrame : NSObject
 /**
  *  微博内容frame
@@ -17,9 +17,12 @@
 /**
  *  微博工具栏frame
  */
-@property(nonatomic,strong)AIStatusToolbarFrame *toolbarFrame;
+@property(nonatomic,assign)CGRect toolbarFrame;
+/**Cell高度*/
+@property(nonatomic,assign)CGFloat cellHeight;
 /**
  *  微博内容模型
  */
 @property(nonatomic,strong)AIStatusesModel *statusesModel;
+
 @end

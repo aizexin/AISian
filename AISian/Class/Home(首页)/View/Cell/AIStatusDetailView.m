@@ -38,7 +38,7 @@
 -(void)setDetailFrame:(AIStatusDetailFrame *)detailFrame{
     _detailFrame = detailFrame;
     self.frame = detailFrame.frame;
-    self.statusOrginalView.originalFrame = detailFrame.statusOriginalFrame;
+    self.statusOrginalView.originalFrame = detailFrame.originalFrame;
     self.statusRetweetedView.retweetedFrame = detailFrame.retweetedFrame;
 }
 

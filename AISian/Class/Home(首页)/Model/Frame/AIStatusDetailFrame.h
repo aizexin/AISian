@@ -13,7 +13,7 @@
 /**
  *  原创微博frame
  */
-@property(nonatomic,strong)AIStatusOriginalFrame *statusOriginalFrame;
+@property(nonatomic,strong)AIStatusOriginalFrame *originalFrame;
 /**
  *  转发微博frame
  */

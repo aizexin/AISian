@@ -23,12 +23,14 @@
 #import "AILoadMoreFooter.h"
 #import "MJRefresh.h"
 #import "AIStatusesTool.h"
+#import "AIStatusCell.h"
+#import "AIStatusFrame.h"
 
 
 @interface AiHomeViewController ()<AIPopMenuDelegate>
 @property(nonatomic,strong)AIHomeTitleButton *titleBtn;
 @property(nonatomic,strong)AIPopMenu *popMenu;
-@property(nonatomic,strong)NSMutableArray *statuses;
+@property(nonatomic,strong)NSMutableArray *statusesFrames;
 @property(nonatomic,strong)AILoadMoreFooter *footer;
 
 /**
@@ -50,11 +52,11 @@
     return _footer;
 }
 
--(NSMutableArray *)statuses{
-    if (!_statuses) {
-        _statuses = [NSMutableArray array];
+-(NSMutableArray *)statusesFrames{
+    if (!_statusesFrames) {
+        _statusesFrames = [NSMutableArray array];
     }
-    return _statuses;
+    return _statusesFrames;
 }
 
 - (void)viewDidLoad {
@@ -113,17 +115,17 @@
    
     AIHomeStatusesParamModel *paramModel = [[AIHomeStatusesParamModel alloc]init];
     paramModel.access_token = [AIAccountTool account].access_token;
-    AIStatusesModel *statuse = [self.statuses firstObject];
+    AIStatusesModel *statuse = [[self.statusesFrames firstObject] statusesModel];
     if (statuse) {
         paramModel.since_id = @([statuse.idstr longLongValue]);
     }
     [AIStatusesTool homeStatusesWithParams:paramModel success:^(AIHomeStatusesResultModel *resultModel) {
 
         AILog(@"请求成功");
-        NSArray *statuses = resultModel.statuses;
+        NSArray *statuses = [self statusesFramesWithStatuses:resultModel.statuses];
         //讲数据查到最前面
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, statuses.count)];
-        [self.statuses insertObjects:statuses atIndexes:indexSet];
+        [self.statusesFrames insertObjects:statuses atIndexes:indexSet];
         [self.tableView reloadData];
         //提示用户刷新数量
         [self showNewStatuesCount:statuses.count];
@@ -171,7 +173,7 @@
 -(void)loadMoreData{
   
     // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
-    AIStatusesModel *lastStatuse = [self.statuses lastObject];
+    AIStatusesModel *lastStatuse = [[self.statusesFrames lastObject]statusesModel];
     
     AIHomeStatusesParamModel *paramModel = [[AIHomeStatusesParamModel alloc]init];
     paramModel.access_token = [AIAccountTool account].access_token;
@@ -179,15 +181,25 @@
         paramModel.max_id = @([lastStatuse.idstr longLongValue] - 1);
     }
     [AIStatusesTool homeStatusesWithParams:paramModel success:^(AIHomeStatusesResultModel *resultModel) {
-        NSArray *statuses = resultModel.statuses;
+        //数据模型转化为Frame模型
+        NSArray *statuses = [self statusesFramesWithStatuses:resultModel.statuses];
 
-        [self.statuses addObjectsFromArray:statuses];
-        AILog(@"xxxxx----%ld",self.statuses.count);
+        [self.statusesFrames addObjectsFromArray:statuses];
         [self.tableView reloadData];
     } failure:^(NSError *error) {
         AILog(@"加载失败%@",error.description);
     }];
     [self.tableView reloadData];
+}
+
+-(NSArray*)statusesFramesWithStatuses:(NSArray*)statuses{
+    NSMutableArray *arrayM = [NSMutableArray array];
+    for (AIStatusesModel *statusesModel in statuses) {
+        AIStatusFrame *statusFrame = [[AIStatusFrame alloc]init];
+        statusFrame.statusesModel = statusesModel;
+        [arrayM addObject:statusFrame];
+    }
+    return arrayM;
 }
 
 /**
@@ -293,30 +305,30 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (self.statuses > 0) {
+    if (self.statusesFrames > 0) {
         self.footer.hidden = NO;
     }
 }
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.statuses.count;
+    return self.statusesFrames.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier ];
-    if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:identifier];
-    }
-    AIStatusesModel *statuse = self.statuses[indexPath.row];
-    cell.textLabel.text = statuse.text;
-    [cell.imageView setImageWithURL:[NSURL URLWithString:statuse.user.profile_image_url]];
+    AIStatusCell *cell = [AIStatusCell statusCell:tableView];
+    cell.statusFrame = self.statusesFrames[indexPath.row];
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AITemp1ViewController *temp1VC = [[AITemp1ViewController alloc]init];
     [self.navigationController pushViewController:temp1VC animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    AIStatusFrame *statusFrame = self.statusesFrames[indexPath.row];
+    AILog(@"%f",statusFrame.cellHeight);
+    return statusFrame.cellHeight;
 }
 
 @end

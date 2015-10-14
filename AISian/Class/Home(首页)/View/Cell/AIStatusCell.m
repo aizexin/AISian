@@ -15,7 +15,14 @@
 
 @end
 @implementation AIStatusCell
-
++(instancetype)statusCell:(UITableView*)tableView{
+    static NSString *identifier = @"cell";
+    AIStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier ];
+    if (!cell) {
+        cell = [[AIStatusCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:identifier];
+    }
+    return cell;
+}
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
@@ -34,7 +41,7 @@
     //详细内容
     self.statusDetailView.detailFrame = statusFrame.detailFrame;
     //工具栏
-    self.toolbar.statusToolbarFrame = statusFrame.toolbarFrame;
+    self.toolbar.frame = statusFrame.toolbarFrame;
 }
 
 @end

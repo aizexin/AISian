@@ -22,4 +22,6 @@
  *  微博的frame
  */
 @property(nonatomic,strong)AIStatusFrame *statusFrame;
+
++(instancetype)statusCell:(UITableView*)tableView;
 @end

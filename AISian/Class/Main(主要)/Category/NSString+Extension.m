@@ -1,13 +1,19 @@
 //
 //  NSString+Extension.m
-//  AISian
+//  01-QQ聊天
 //
-//  Created by 艾泽鑫 on 15/9/29.
-//  Copyright © 2015年 aizexin. All rights reserved.
+//  Created by apple on 14-5-30.
+//  Copyright (c) 2014年 heima. All rights reserved.
 //
 
 #import "NSString+Extension.h"
 
-@implementation NSString(Extension)
+@implementation NSString (Extension)
 
+- (CGSize)sizeWithFont:(UIFont *)font maxSize:(CGSize)maxSize
+{
+    NSDictionary *dict = @{NSFontAttributeName: font};
+    CGSize textSize = [self boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+    return textSize;
+}
 @end

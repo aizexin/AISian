@@ -11,5 +11,12 @@
 @implementation AIStatusToolbar
 
 
-
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setBackgroundColor:[UIColor blueColor]];
+    }
+    return self;
+}
 @end

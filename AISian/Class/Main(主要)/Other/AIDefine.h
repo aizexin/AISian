@@ -11,7 +11,7 @@
 
 #import "UIView+Extension.h"
 #import "UIImage+Extension.h"
-
+#import "NSString+Extension.h"
 #define Mainsize ([[UIScreen mainScreen]bounds].size)
 // 颜色
 #define AIColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
@@ -35,6 +35,10 @@
 #define AIAppSecrect @"a41299f2678ae4aee937d6bdc7ecc257"
 #define AIAppRediectURI @"http://www.baidu.com"
 
+
+// cell的计算参数
+// cell的内边距
+#define AIStatusCellInset 10
 // 原创微博昵称字体
 #define AIStatusOrginalNameFont [UIFont systemFontOfSize:14]
 // 原创微博时间字体
