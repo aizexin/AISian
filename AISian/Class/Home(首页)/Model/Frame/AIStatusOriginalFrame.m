@@ -10,6 +10,7 @@
 #import "AIDefine.h"
 #import "AIUserModel.h"
 #import "AIStatusesModel.h"
+#import "AIStatusPhotosFrame.h"
 @implementation AIStatusOriginalFrame
 
 
@@ -39,20 +40,7 @@
         CGFloat vipH = vipW;
         self.vipFrame = CGRectMake(vipX, vipY, vipW, vipH);
     }
-
-    
-//    //3.设置时间
-//    CGFloat timeX = nameX;
-//    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset * 0.5;
-//    CGSize timeSize = [status.created_at sizeWithFont:AIStatusOrginalTimeFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-//  
-//    self.timeFrame = (CGRect){{timeX,timeY},timeSize};
-//    
-//    //4.设置来源
-//    CGFloat sourceX = CGRectGetMaxX(self.timeFrame) + AIStatusCellInset;
-//    CGFloat sourceY = timeY;
-//    CGSize sourceSize = [status.source sizeWithFont:AIStatusOrginalSourceFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
-//    self.sourceFrame = (CGRect){{sourceX,sourceY},sourceSize};
+    //这里设置时间和来源没用 ,需要时时跟新
     
     //5.正文
     CGFloat textX = AIStatusCellInset;
@@ -60,15 +48,27 @@
     CGSize textSize = [status.text sizeWithFont:AIStatusOrginalTextFont maxSize:CGSizeMake(Mainsize.width - 2*AIStatusCellInset , CGFLOAT_MAX)];
     self.textFrame = (CGRect){{textX,textY},textSize};
     
-    //6.自己
+    //6.相册
+    if (self.status.pic_urls.count != 0) {
+        CGFloat photosX = iconX;
+        CGFloat photosY = CGRectGetMaxY(self.textFrame) + AIStatusCellInset * 0.5;
+        CGFloat photosW = Mainsize.width - 2 * iconX;
+#warning 高度应该是计算出来的
+        CGFloat photosH = 300;
+        self.photosFrame = CGRectMake(photosX, photosY, photosW, photosH);
+    }
+    
+    //7.自己
     CGFloat X = 0;
     CGFloat Y = 0;
     CGFloat W = Mainsize.width;
-    CGFloat H = CGRectGetMaxY(self.textFrame);
+    CGFloat H = 0;
+    if (self.status.pic_urls.count == 0) {
+       H = CGRectGetMaxY(self.textFrame);
+    }else{
+       H = CGRectGetMaxY(self.photosFrame);
+    }
     self.frame = CGRectMake(X, Y, W, H);
-    
-    
-    
     
 }
 @end

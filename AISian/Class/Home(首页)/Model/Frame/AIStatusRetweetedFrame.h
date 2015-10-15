@@ -13,12 +13,13 @@
 /**
  *  微博数据模型
  */
-@property(nonatomic,strong)AIStatusesModel *statusesModel;
+@property(nonatomic,strong)AIStatusesModel *retweetedStatus;
 /** 昵称 */
 @property (nonatomic, assign) CGRect nameFrame;
 /** 正文 */
 @property (nonatomic, assign) CGRect textFrame;
-
+/** 微博配图 */
+@property (nonatomic, assign) CGRect retweetedPhotosFrame;
 /** 自己的frame */
 @property (nonatomic, assign) CGRect frame;
 @end

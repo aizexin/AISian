@@ -12,6 +12,7 @@
 #import "AIStatusOriginalFrame.h"
 #import "AIUserModel.h"
 #import "UIImageView+AFNetworking.h"
+#import "AIStatusPhotosView.h"
 @interface AIStatusOriginalView ()
 /** 昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
@@ -27,6 +28,8 @@
  *  会员图标
  */
 @property(nonatomic,weak)UIImageView *vipView;
+/**微博Cell里相册 */
+@property(nonatomic,weak)AIStatusPhotosView *photosView;
 @end
 
 @implementation AIStatusOriginalView
@@ -71,9 +74,16 @@
         UIImageView *vipView = [[UIImageView alloc]init];
         [self addSubview:vipView];
         self.vipView = vipView;
+        
+        //7.添加相册
+        AIStatusPhotosView *photosView = [[AIStatusPhotosView alloc]init];
+        photosView.backgroundColor = [UIColor redColor];
+        self.photosView = photosView;
+        [self addSubview:photosView];
     }
     return self;
 }
+
 -(void)setOriginalFrame:(AIStatusOriginalFrame *)originalFrame{
     _originalFrame = originalFrame;
     AIStatusesModel *statuses = originalFrame.status;
@@ -114,7 +124,9 @@
     NSURL *iconUrl = [NSURL URLWithString:user.profile_image_url];
     [self.iconView setImageWithURL:iconUrl placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     self.iconView.frame = originalFrame.iconFrame;
- 
+    
+    //相册
+    self.photosView.frame = originalFrame.photosFrame;
 }
 
 @end

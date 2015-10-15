@@ -15,7 +15,6 @@
 
 -(void)setStatusesModel:(AIStatusesModel *)statusesModel{
     _statusesModel = statusesModel;
-    
     //计算具体内容
     [self setupDetailFrame];
     //计算toolbar

@@ -10,15 +10,17 @@
 #import "AIStatusesModel.h"
 #import "AIUserModel.h"
 #import "AIDefine.h"
+
 @implementation AIStatusRetweetedFrame
 
 
--(void)setStatusesModel:(AIStatusesModel *)statusesModel{
-    _statusesModel = statusesModel;
+-(void)setRetweetedStatus:(AIStatusesModel *)retweetedStatus{
+    _retweetedStatus = retweetedStatus;
+//    AILog(@"%@",retweetedStatus);
     // 1.昵称
     CGFloat nameX = AIStatusCellInset;
     CGFloat nameY = AIStatusCellInset;
-    NSString *name = [NSString stringWithFormat:@"@%@",statusesModel.user.name];
+    NSString *name = [NSString stringWithFormat:@"@%@",retweetedStatus.user.name];
     CGSize nameSize = [name sizeWithFont:AIStatusRetweetedNameFont maxSize:CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX)];
     self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
     
@@ -27,13 +29,34 @@
     CGFloat textY = CGRectGetMaxY(self.nameFrame) + AIStatusCellInset * 0.5;
     CGFloat maxW = Mainsize.width - 2 * textX;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
-    CGSize textSize = [statusesModel.retweeted_status.text sizeWithFont:AIStatusRetweetedTextFont maxSize:maxSize];
+    CGSize textSize = [retweetedStatus.text sizeWithFont:AIStatusRetweetedTextFont maxSize:maxSize];
     self.textFrame = (CGRect){{textX, textY}, textSize};
-    // 自己
-    CGFloat x = 0;
-    CGFloat y = 0; // 高度 = 原创微博最大的Y值
-    CGFloat w = Mainsize.width;
-    CGFloat h = CGRectGetMaxY(self.textFrame) + AIStatusCellInset;
-    self.frame = CGRectMake(x, y, w, h);
+//    // 自己
+//    CGFloat x = 0;
+//    CGFloat y = 0; // 高度 = 原创微博最大的Y值
+//    CGFloat w = Mainsize.width;
+//    CGFloat h = CGRectGetMaxY(self.textFrame) + AIStatusCellInset;
+//    self.frame = CGRectMake(x, y, w, h);
+    //6.相册
+    if (retweetedStatus.pic_urls.count != 0) {
+        CGFloat photosX = nameX;
+        CGFloat photosY = CGRectGetMaxY(self.textFrame) + AIStatusCellInset * 0.5;
+        CGFloat photosW = Mainsize.width - 2 * nameX;
+#warning 高度应该是计算出来的
+        CGFloat photosH = 300;
+        self.retweetedPhotosFrame = CGRectMake(photosX, photosY, photosW, photosH);
+    }
+    
+    //7.自己
+    CGFloat X = 0;
+    CGFloat Y = 0;
+    CGFloat W = Mainsize.width;
+    CGFloat H = 0;
+    if (retweetedStatus.pic_urls.count == 0) {
+        H = CGRectGetMaxY(self.textFrame);
+    }else{
+        H = CGRectGetMaxY(self.retweetedPhotosFrame);
+    }
+    self.frame = CGRectMake(X, Y, W, H);
 }
 @end

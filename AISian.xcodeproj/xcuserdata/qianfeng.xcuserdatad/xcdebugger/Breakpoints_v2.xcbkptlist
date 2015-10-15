@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AISian/Class/Home(&#x9996;&#x9875;)/Model/AIStatusesModel.m"
-            timestampString = "466516994.83833"
+            timestampString = "466586131.917966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-created_at"
             landmarkType = "5">
          </BreakpointContent>
@@ -35,29 +35,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AISian/Class/Home(&#x9996;&#x9875;)/View/Cell/AIStatusOriginalView.m"
-            timestampString = "466518077.139176"
+            filePath = "AISian/Class/Home(&#x9996;&#x9875;)/View/Cell/AIStatusRetweetedView.m"
+            timestampString = "466586894.164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "-setOriginalFrame:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AISian/Class/Home(&#x9996;&#x9875;)/Model/AIStatusesModel.m"
-            timestampString = "466518632.484336"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "-setSource:"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-initWithFrame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -23,7 +23,7 @@
     CGFloat h = 0;
     if (statusesModel.retweeted_status) {
         AIStatusRetweetedFrame *retweetedFrame = [[AIStatusRetweetedFrame alloc]init];
-        retweetedFrame.statusesModel = statusesModel;
+        retweetedFrame.retweetedStatus = statusesModel.retweeted_status;
         CGRect f = retweetedFrame.frame;
         f.origin.y = CGRectGetMaxY(originalFrame.frame);
         retweetedFrame.frame = f;

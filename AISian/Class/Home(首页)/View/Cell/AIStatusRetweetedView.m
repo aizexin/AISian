@@ -12,11 +12,16 @@
 #import "AIStatusesModel.h"
 #import "AIUserModel.h"
 #import "UIImage+Extension.h"
+#import "AIStatusPhotosView.h"
 @interface AIStatusRetweetedView ()
 /**  昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
 /** 正文 */
 @property (nonatomic, weak) UILabel *textLabel;
+/**
+ *  转发微博配图
+ */
+@property(nonatomic,weak)AIStatusPhotosView *rePhotos;
 @end
 @implementation AIStatusRetweetedView
 
@@ -39,6 +44,10 @@
         textLabel.numberOfLines = 0;
         [self addSubview:textLabel];
         self.textLabel = textLabel;
+        //配图
+        AIStatusPhotosView *rePhotos = [[AIStatusPhotosView alloc]init];
+        self.rePhotos = rePhotos;
+        [self addSubview:rePhotos];
     }
     return self;
 }
@@ -48,14 +57,18 @@
     self.frame = retweetedFrame.frame;
     
     //取出微博数据
-    AIStatusesModel *statuses = retweetedFrame.statusesModel;
+    AIStatusesModel *retweetedStatus = retweetedFrame.retweetedStatus;
     //设置昵称
 //    self.nameLabel.text = statuses.user.name;
-    self.nameLabel.text = [NSString stringWithFormat:@"@%@",statuses.user.name];
+    self.nameLabel.text = [NSString stringWithFormat:@"@%@",retweetedStatus.user.name];
     self.nameLabel.frame = retweetedFrame.nameFrame;
     //设置内容
-    self.textLabel.text = statuses.retweeted_status.text;
+    self.textLabel.text = retweetedStatus.text;
     self.textLabel.frame = retweetedFrame.textFrame;
+    
+    //设置配图
+    
+    self.rePhotos.frame = retweetedFrame.retweetedPhotosFrame;
 
 }
 

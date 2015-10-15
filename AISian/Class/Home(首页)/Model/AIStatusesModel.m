@@ -38,47 +38,7 @@
 //Wed Oct 14 19:50:45 +0800 2015
 -(NSString *)created_at{
 
-    /*AILog(@"%@",_created_at);
-    NSDateFormatter *fmt = [[NSDateFormatter alloc]init];
-    fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
-    // 获得微博发布的具体时间
-    NSDate *date = [fmt dateFromString:_created_at];
-    [date timeIntervalSinceNow];
-    NSDate *nowdate = [NSDate date];
-//     [fmt stringFromDate:date];
-    //设置时间
-    if ([date isThisYear]) {//今年
-        NSDateComponents *compnent = [date deltaWithNow];
-        AILog(@"%ld",(long)compnent.day);
-        if (compnent.day > 2) {//至少是前天
-            fmt.dateFormat = @"MM-dd- HH:mm";
-            return [fmt stringFromDate:date];
-        }else{//前天之前
-            if (compnent.day > 1) {//昨天
-                fmt.dateFormat = @"昨天 HH:mm";
-                return [fmt stringFromDate:date];
-            }else{
-                if (compnent.hour > 1) { //一小时前
-                    fmt.dateFormat = @"今天 HH:mm";
-                    return [fmt stringFromDate:date];
-                }else{
-                    if (compnent.second < 60) {
-                        return @"刚刚";
-                    }else{
-                        fmt.dateFormat = @"mm分钟前";
-                        return [fmt stringFromDate:date];
-                        
-                    }
-                    
-                }
-            }
-            
-        }
-    }else{//非今年
-        fmt.dateFormat = @"yyyy-MM-dd";
-        return [fmt stringFromDate:date];
-    }*/
-    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+      NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
     fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
     // 获得微博发布的具体时间
     NSDate *createDate = [fmt dateFromString:_created_at];
