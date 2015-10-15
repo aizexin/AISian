@@ -84,8 +84,6 @@
 		BC0241DF1BCD255D00175D63 /* AIStatusRetweetedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0241DE1BCD255D00175D63 /* AIStatusRetweetedFrame.m */; };
 		BC02EFAB1BCF736700A20606 /* AIStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC02EFAA1BCF736700A20606 /* AIStatusPhotosView.m */; };
 		BC02EFAE1BCF73EE00A20606 /* AIStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC02EFAD1BCF73EE00A20606 /* AIStatusPhotoView.m */; };
-		BC02EFB11BCF744500A20606 /* AIStatusPhotosFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC02EFB01BCF744500A20606 /* AIStatusPhotosFrame.m */; };
-		BC02EFB41BCF745B00A20606 /* AIStatusPhotoFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = BC02EFB31BCF745B00A20606 /* AIStatusPhotoFrame.m */; };
 		BC47EDDC1BC672B6000A02C7 /* AIUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */; };
 		BC47EDDF1BC672D3000A02C7 /* AIStatusesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC47EDDE1BC672D3000A02C7 /* AIStatusesModel.m */; };
 		BC6A8EFF1BCA8D81001CE69F /* AIHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6A8EFE1BCA8D81001CE69F /* AIHttpTool.m */; };
@@ -270,10 +268,6 @@
 		BC02EFAA1BCF736700A20606 /* AIStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusPhotosView.m; sourceTree = "<group>"; };
 		BC02EFAC1BCF73EE00A20606 /* AIStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusPhotoView.h; sourceTree = "<group>"; };
 		BC02EFAD1BCF73EE00A20606 /* AIStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusPhotoView.m; sourceTree = "<group>"; };
-		BC02EFAF1BCF744500A20606 /* AIStatusPhotosFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusPhotosFrame.h; sourceTree = "<group>"; };
-		BC02EFB01BCF744500A20606 /* AIStatusPhotosFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusPhotosFrame.m; sourceTree = "<group>"; };
-		BC02EFB21BCF745B00A20606 /* AIStatusPhotoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusPhotoFrame.h; sourceTree = "<group>"; };
-		BC02EFB31BCF745B00A20606 /* AIStatusPhotoFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIStatusPhotoFrame.m; sourceTree = "<group>"; };
 		BC47EDDA1BC672B6000A02C7 /* AIUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIUserModel.h; sourceTree = "<group>"; };
 		BC47EDDB1BC672B6000A02C7 /* AIUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIUserModel.m; sourceTree = "<group>"; };
 		BC47EDDD1BC672D3000A02C7 /* AIStatusesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIStatusesModel.h; sourceTree = "<group>"; };
@@ -634,10 +628,6 @@
 				BC0241DB1BCD253100175D63 /* AIStatusOriginalFrame.m */,
 				BC0241DD1BCD255D00175D63 /* AIStatusRetweetedFrame.h */,
 				BC0241DE1BCD255D00175D63 /* AIStatusRetweetedFrame.m */,
-				BC02EFAF1BCF744500A20606 /* AIStatusPhotosFrame.h */,
-				BC02EFB01BCF744500A20606 /* AIStatusPhotosFrame.m */,
-				BC02EFB21BCF745B00A20606 /* AIStatusPhotoFrame.h */,
-				BC02EFB31BCF745B00A20606 /* AIStatusPhotoFrame.m */,
 			);
 			path = Frame;
 			sourceTree = "<group>";
@@ -1113,7 +1103,6 @@
 				BC01DB3D1BC600D3008F6438 /* AFHTTPSessionManager.m in Sources */,
 				BC01DB771BC60121008F6438 /* MBProgressHUD+NJ.m in Sources */,
 				BC9985031BBA949200CA858C /* AIHomeTitleButton.m in Sources */,
-				BC02EFB41BCF745B00A20606 /* AIStatusPhotoFrame.m in Sources */,
 				BC01DB3E1BC600D3008F6438 /* AFNetworkReachabilityManager.m in Sources */,
 				BC02419E1BCCD8D500175D63 /* UIScrollView+MJRefresh.m in Sources */,
 				BCD505111BB65D1500A9E7BB /* AiHomeViewController.m in Sources */,
@@ -1146,7 +1135,6 @@
 				BC0241DC1BCD253100175D63 /* AIStatusOriginalFrame.m in Sources */,
 				45DFBEEF1BB998CD000584FD /* AISearchBar.m in Sources */,
 				BC0241991BCCD8D500175D63 /* MJRefreshBaseView.m in Sources */,
-				BC02EFB11BCF744500A20606 /* AIStatusPhotosFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

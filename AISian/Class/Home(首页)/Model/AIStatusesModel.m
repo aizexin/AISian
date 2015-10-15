@@ -69,7 +69,6 @@
 // _source == <a href="http://weibo.com/" rel="nofollow">微博 weibo.com</a>
 // destSource = 来自微博 weibo.com
 -(void)setSource:(NSString *)source{
-    AILog(@"-----source = %@",source);
     if (source.length == 0) {
         return;
     }

@@ -67,7 +67,6 @@
  *  设置所有item的Frame
  */
 -(void)setTabBarItemFrame{
-    AILog(@"%ld",self.items.count);
     CGFloat width = self.width / 5;
     CGFloat hight = self.height;
     int index = 0;

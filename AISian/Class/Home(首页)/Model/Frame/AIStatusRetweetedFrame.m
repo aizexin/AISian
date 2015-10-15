@@ -10,6 +10,7 @@
 #import "AIStatusesModel.h"
 #import "AIUserModel.h"
 #import "AIDefine.h"
+#import "AIStatusPhotosView.h"
 
 @implementation AIStatusRetweetedFrame
 
@@ -31,20 +32,14 @@
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
     CGSize textSize = [retweetedStatus.text sizeWithFont:AIStatusRetweetedTextFont maxSize:maxSize];
     self.textFrame = (CGRect){{textX, textY}, textSize};
-//    // 自己
-//    CGFloat x = 0;
-//    CGFloat y = 0; // 高度 = 原创微博最大的Y值
-//    CGFloat w = Mainsize.width;
-//    CGFloat h = CGRectGetMaxY(self.textFrame) + AIStatusCellInset;
-//    self.frame = CGRectMake(x, y, w, h);
+
+
     //6.相册
-    if (retweetedStatus.pic_urls.count != 0) {
+    if (self.retweetedStatus.pic_urls.count != 0) {
         CGFloat photosX = nameX;
-        CGFloat photosY = CGRectGetMaxY(self.textFrame) + AIStatusCellInset * 0.5;
-        CGFloat photosW = Mainsize.width - 2 * nameX;
-#warning 高度应该是计算出来的
-        CGFloat photosH = 300;
-        self.retweetedPhotosFrame = CGRectMake(photosX, photosY, photosW, photosH);
+        CGFloat photosY =  CGRectGetMaxY(self.textFrame) + AIStatusCellInset * 0.5;
+        CGSize photoSize = [AIStatusPhotosView sizeWithPhotosCount:self.retweetedStatus.pic_urls.count];
+        self.retweetedPhotosFrame = (CGRect){{photosX,photosY},photoSize};
     }
     
     //7.自己

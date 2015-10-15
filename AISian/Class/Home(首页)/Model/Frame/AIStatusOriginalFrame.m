@@ -10,7 +10,7 @@
 #import "AIDefine.h"
 #import "AIUserModel.h"
 #import "AIStatusesModel.h"
-#import "AIStatusPhotosFrame.h"
+#import "AIStatusPhotosView.h"
 @implementation AIStatusOriginalFrame
 
 
@@ -52,10 +52,8 @@
     if (self.status.pic_urls.count != 0) {
         CGFloat photosX = iconX;
         CGFloat photosY = CGRectGetMaxY(self.textFrame) + AIStatusCellInset * 0.5;
-        CGFloat photosW = Mainsize.width - 2 * iconX;
-#warning 高度应该是计算出来的
-        CGFloat photosH = 300;
-        self.photosFrame = CGRectMake(photosX, photosY, photosW, photosH);
+        CGSize photoSize = [AIStatusPhotosView sizeWithPhotosCount:self.status.pic_urls.count];
+        self.photosFrame = (CGRect){{photosX,photosY},photoSize};
     }
     
     //7.自己
