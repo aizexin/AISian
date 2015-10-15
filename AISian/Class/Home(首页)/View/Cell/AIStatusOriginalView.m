@@ -77,7 +77,6 @@
         
         //7.添加相册
         AIStatusPhotosView *photosView = [[AIStatusPhotosView alloc]init];
-        photosView.backgroundColor = [UIColor redColor];
         self.photosView = photosView;
         [self addSubview:photosView];
     }
@@ -126,7 +125,14 @@
     self.iconView.frame = originalFrame.iconFrame;
     
     //相册
-    self.photosView.frame = originalFrame.photosFrame;
+    if (statuses.pic_urls) {
+        
+        self.photosView.frame = originalFrame.photosFrame;
+        self.photosView.pic_urls = statuses.pic_urls;
+        self.photosView.hidden = NO;
+    }else{
+        self.photosView.hidden = YES;
+    }
 }
 
 @end

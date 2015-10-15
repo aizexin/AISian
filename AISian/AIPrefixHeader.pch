@@ -1,0 +1,14 @@
+//
+//  AIPrefixHeader.pch
+//  AISian
+//
+//  Created by qianfeng on 15/10/15.
+//  Copyright (c) 2015年 aizexin. All rights reserved.
+//
+
+#ifndef AISian_AIPrefixHeader_pch
+#define AISian_AIPrefixHeader_pch
+
+
+#import "AIDefine.h"
+#endif

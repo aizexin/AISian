@@ -12,9 +12,9 @@
 @interface AIStatusPhotosView : UIView
 
 /**
- *  微博数据模型
+ *  里面装的photo模型
  */
-@property(nonatomic,strong)AIStatusesModel *statusesModel;
+@property(nonatomic,strong)NSArray *pic_urls;
 
 +(CGSize)sizeWithPhotosCount:(NSInteger)photosCount;
 

@@ -7,15 +7,22 @@
 //
 
 #import "AIStatusPhotoView.h"
-
+#import "UIImageView+AFNetworking.h"
+#import "AIPhoto.h"
 @implementation AIStatusPhotoView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setContentMode:(UIViewContentModeScaleAspectFill)];
+        [self setClipsToBounds:YES];
+    }
+    return self;
 }
-*/
 
+-(void)setPhoto:(AIPhoto *)photo{
+    //下载图片    
+    [self setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageNamed:@"timeline_image_placeholder"]];
+}
 @end

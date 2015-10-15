@@ -40,6 +40,8 @@
         CGFloat photosY =  CGRectGetMaxY(self.textFrame) + AIStatusCellInset * 0.5;
         CGSize photoSize = [AIStatusPhotosView sizeWithPhotosCount:self.retweetedStatus.pic_urls.count];
         self.retweetedPhotosFrame = (CGRect){{photosX,photosY},photoSize};
+    }else{
+        self.retweetedPhotosFrame = CGRectZero;
     }
     
     //7.自己
@@ -54,4 +56,5 @@
     }
     self.frame = CGRectMake(X, Y, W, H);
 }
+
 @end

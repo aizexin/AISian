@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class AIPhoto;
+
 @interface AIStatusPhotoView : UIImageView
 
+
+@property(nonatomic ,copy)AIPhoto *photo;
 @end

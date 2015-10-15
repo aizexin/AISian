@@ -67,8 +67,13 @@
     self.textLabel.frame = retweetedFrame.textFrame;
     
     //设置配图
-    
-    self.rePhotos.frame = retweetedFrame.retweetedPhotosFrame;
+    if (retweetedStatus.pic_urls) {
+        self.rePhotos.frame = retweetedFrame.retweetedPhotosFrame;
+        self.rePhotos.pic_urls = retweetedStatus.pic_urls;
+        self.rePhotos.hidden = NO;
+    }else{
+        self.rePhotos.hidden = YES;
+    }
 
 }
 
