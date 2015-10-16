@@ -27,6 +27,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
+    self.userInteractionEnabled = YES;
     self = [super initWithFrame:frame];
     if (self) {
         //设置背景

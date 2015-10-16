@@ -17,6 +17,7 @@
 @implementation AIStatusCell
 +(instancetype)statusCell:(UITableView*)tableView{
     static NSString *identifier = @"cell";
+    
     AIStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier ];
     if (!cell) {
         cell = [[AIStatusCell alloc]initWithStyle:(UITableViewCellStyleSubtitle) reuseIdentifier:identifier];

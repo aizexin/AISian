@@ -5,12 +5,14 @@
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "B167BA6CF24275BDCB5F16F1895C44E9C4DDAE36" : 0,
-    "AA1F0380D51256D256FCAA12814C021EAFC9CFFC" : 0
+    "AA1F0380D51256D256FCAA12814C021EAFC9CFFC" : 0,
+    "ADE105B5E71C88C0ABF755C6B17CA1BD822CE0AB" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5D16BFF2-F52E-42A1-BA95-E9B73D8790B9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "B167BA6CF24275BDCB5F16F1895C44E9C4DDAE36" : "",
-    "AA1F0380D51256D256FCAA12814C021EAFC9CFFC" : "AISian\/"
+    "AA1F0380D51256D256FCAA12814C021EAFC9CFFC" : "AISian\/",
+    "ADE105B5E71C88C0ABF755C6B17CA1BD822CE0AB" : "AISian\/AISian\/Class\/Libs\/MJPhotoBrowser\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "AISian",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aizexin\/AISian.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AA1F0380D51256D256FCAA12814C021EAFC9CFFC"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aizexin\/MJPhotoBrowser.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ADE105B5E71C88C0ABF755C6B17CA1BD822CE0AB"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/aizexin\/AIposition.git",

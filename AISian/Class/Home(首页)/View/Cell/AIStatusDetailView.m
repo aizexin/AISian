@@ -27,6 +27,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.userInteractionEnabled = YES;
         //设置背景图片
         self.image = [UIImage resizedImage:@"timeline_card_top_background"];
         

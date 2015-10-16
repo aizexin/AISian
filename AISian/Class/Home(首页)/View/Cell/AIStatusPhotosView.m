@@ -17,15 +17,28 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
+    self.userInteractionEnabled = YES;
     self = [super initWithFrame:frame];
     if (self) {
         //预先添加9个控件
         for (int i = 0; i < AIStatusPhotosMaxCount; i++) {
             AIStatusPhotoView *imageView = [[AIStatusPhotoView alloc]init];
+             //添加手势监听器
+//            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapPhoto:)];
+//            [imageView addGestureRecognizer:tap];
+//            
             [self addSubview:imageView];
+            // 添加手势监听器（一个手势监听器 只能 监听对应的一个view）
+            UITapGestureRecognizer *recognizer = [[UITapGestureRecognizer alloc] init];
+            [recognizer addTarget:self action:@selector(tapPhoto:)];
+            [imageView addGestureRecognizer:recognizer];
         }
     }
     return self;
+}
+
+-(void)tapPhoto:(UITapGestureRecognizer*)tap{
+    AILog(@"tapPhoto");
 }
 
 -(void)layoutSubviews{

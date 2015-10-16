@@ -17,6 +17,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
+    self.userInteractionEnabled = YES;
     self = [super initWithFrame:frame];
     if (self) {
         [self setContentMode:(UIViewContentModeScaleAspectFill)];
